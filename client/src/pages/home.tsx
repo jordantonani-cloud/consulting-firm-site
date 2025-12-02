@@ -65,11 +65,8 @@ export default function Home() {
         }`}
       >
         <div className="container-constrained flex items-center justify-between">
-          <div className={`font-heading font-bold text-xl md:text-2xl tracking-tight flex items-center gap-2 ${isScrolled ? 'text-foreground' : 'text-white'}`}>
-            <div className={`w-8 h-8 rounded-full flex items-center justify-center ${isScrolled ? 'bg-primary text-[#050B14]' : 'bg-primary text-[#050B14]'}`}>
-              <Mountain size={18} />
-            </div>
-            Northwest Onchain Hub
+          <div className="flex items-center">
+            <img src="/logo.svg" alt="Northwest Onchain Hub" className="h-12 w-auto" />
           </div>
 
           {/* Desktop Nav */}
@@ -506,11 +503,8 @@ export default function Home() {
       <footer className="py-12 bg-[#050B14] text-white text-center border-t border-white/10">
         <div className="container-constrained">
           <div className="flex flex-col items-center gap-6 mb-8">
-             <div className="font-heading font-bold text-xl tracking-tight flex items-center gap-2">
-                <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center text-[#050B14]">
-                  <Mountain size={18} />
-                </div>
-                Northwest Onchain Hub
+             <div className="flex items-center">
+                <img src="/logo.svg" alt="Northwest Onchain Hub" className="h-16 w-auto" />
               </div>
               <p className="text-white/60 max-w-md mx-auto">
                 Bridging TradFi and onchain finance in the Pacific Northwest.

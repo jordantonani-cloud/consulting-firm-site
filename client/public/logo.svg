@@ -1,0 +1,41 @@
+<svg width="320" height="120" viewBox="0 0 320 120" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="320" height="120" fill="#050B14"/>
+
+  <!-- Circular icon -->
+  <g transform="translate(20,20)" stroke="#3AD0C3" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Outer circle -->
+    <circle cx="40" cy="40" r="30"/>
+
+    <!-- Mountain peak -->
+    <path d="M20 46 L38 26 L50 40" />
+
+    <!-- Onchain nodes + connections -->
+    <!-- Nodes -->
+    <circle cx="22" cy="54" r="3"/>
+    <circle cx="34" cy="48" r="3"/>
+    <circle cx="48" cy="56" r="3"/>
+
+    <!-- Connections -->
+    <path d="M22 54 L34 48 L48 56"/>
+  </g>
+
+  <!-- Wordmark -->
+  <text x="110" y="50"
+        fill="#3AD0C3"
+        font-family="Space Grotesk, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"
+        font-size="20"
+        font-weight="600"
+        letter-spacing="2">
+    NORTHWEST
+  </text>
+
+  <text x="110" y="78"
+        fill="#3AD0C3"
+        font-family="Space Grotesk, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"
+        font-size="20"
+        font-weight="600"
+        letter-spacing="2">
+    ONCHAIN
+  </text>
+</svg>
