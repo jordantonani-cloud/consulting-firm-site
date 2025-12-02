@@ -1,0 +1,151 @@
+You are a senior product designer and front-end developer. 
+
+Build a modern, single-page consulting website for **Jordan Tonani**, a crypto / DeFi business development and advisory consultant.
+
+Overall goals:
+- Make Jordan look like a sharp, credible, in-demand expert.
+- Clearly explain two main offerings:
+  1) Onchain / DeFi / crypto-native business development for protocols and infra teams.
+  2) HNWI / family office / financial advisor education on crypto and DeFi.
+- Drive visitors to book a call via a clear, bold CTA (“Book a call”).
+
+Tone and brand:
+- Voice: concise, professional, confident, but personable and non-cringe.
+- Audience: crypto founders, protocol teams, trading firms, RIAs, family offices, wealth managers.
+- Style: clean, minimal, “crypto-native” aesthetic without memes or hype. Think modern fintech, not degen.
+- Write all copy in clear, plain English with short paragraphs and benefit-driven headlines.
+
+Jordan’s background (weave this into the copy):
+- Former financial advisor at Morgan Stanley.
+- Currently works full-time in crypto / DeFi.
+- Deep experience with onchain structured products and DeFi lending.
+- Well connected across trading firms, prop shops, market makers, major crypto players, and EVM / Ethereum-native DeFi protocols.
+- Unique blend of TradFi advisor experience + crypto-native BD + institutional education.
+
+Site structure (single-page with sticky top nav):
+- Top navigation:
+  - Logo or wordmark: “Tonani Onchain Advisory” (simple text is fine).
+  - Links: “About”, “Services”, “Who I Work With”, “Process”, “Contact”.
+  - A primary CTA button on the right: “Book a call”.
+
+1) Hero section:
+  - Full-width hero above the fold.
+  - Headline example (pick the best version or refine it):
+    - “Onchain BD & Crypto Strategy for Serious Institutions”
+    - or “DeFi Growth & Crypto Education for RIAs, Family Offices, and Protocols”
+  - Subheadline example:
+    - “I help crypto teams, RIAs, and family offices navigate onchain lending, DeFi, and digital assets — from partnerships and integrations to client-ready education.”
+  - One or two bullet lines or tags under the subheadline:
+    - “Onchain / DeFi BD”
+    - “RIA & Family Office Crypto Education”
+    - “Structured Products & Lending Strategy”
+  - Primary CTA button: “Book a call”
+  - Secondary CTA (text link or ghost button): “Download services overview” (link to a placeholder PDF).
+  - Include a simple visual on the right side: maybe a card showing “Example outcomes” or a stylized “network map” graphic, but keep it abstract and clean.
+
+2) “About Jordan” section:
+  - Short, punchy heading: “Bridging Wall Street and DeFi”
+  - 2–3 short paragraphs:
+    - Mention that Jordan started as a financial advisor at Morgan Stanley, then went full-time into crypto / DeFi.
+    - Emphasize experience with onchain structured products, DeFi lending, and building relationships with trading firms, custodians, and major DeFi protocols.
+    - Highlight that he speaks both “advisor language” and “crypto-native language” and can translate between the two.
+  - Add a small bullet list “What this means for you”:
+    - “Practical, compliance-aware frameworks — not hype.”
+    - “Warm access to real onchain and institutional players.”
+    - “Clear roadmaps your team can execute.”
+
+3) “Services” section:
+  - Split into two cards or columns.
+
+  Card A: “Onchain / DeFi Business Development”
+  - Subtext: “For protocols, infra teams, and crypto-native products.”
+  - Bullets like:
+    - “Fractional Head of BD (1–2 days per week)”
+    - “Partnership and integration strategy (wallets, custodians, MMs, exchanges, DeFi protocols)”
+    - “Go-to-market for new DeFi / lending / structured products”
+    - “Institutional narrative and pitch refinement”
+  - A short outcome sentence: “Turn scattered conversations into a focused pipeline, warm intros, and shipped integrations.”
+
+  Card B: “Crypto & DeFi Education for RIAs & Family Offices”
+  - Subtext: “For wealth managers, CIOs, advisor platforms, and FOs.”
+  - Bullets like:
+    - “Client-ready workshops: Crypto & DeFi 101 → 201”
+    - “Frameworks for risk, due diligence, and product selection”
+    - “How to talk to clients about digital assets without overpromising”
+    - “Roadmaps for integrating onchain opportunities (lending, tokenization, etc.) over 12–24 months”
+  - Note: include a subtle disclaimer line: “Education only. This is not individualized investment, legal, or tax advice.”
+
+4) “Who I Work With” section:
+  - Heading: “Who This Is For”
+  - Three columns or cards listing primary client types. Examples:
+    - “Crypto & DeFi Teams”
+      - “Lending protocols, structured product issuers, L1s/L2s, infra and data providers.”
+    - “Wealth & Advisory Firms”
+      - “RIAs, independent advisors, multi-family offices, CIOs.”
+    - “Trading & Market Structure Firms”
+      - “Trading desks, MMs, prop shops exploring DeFi and onchain liquidity.”
+  - Underneath, add a simple line like:
+    - “If you sit between TradFi and DeFi and need someone who understands both worlds, we should talk.”
+
+5) “How I Work” / Process section:
+  - Heading: “Simple, no-nonsense process”
+  - Show a 4-step horizontal timeline:
+    1. “01 — Discovery”
+       - “30–45 minute working session to understand your goals, constraints, and timelines.”
+    2. “02 — Diagnosis”
+       - “Map your current positioning, relationships, and opportunities across DeFi / advisor channels.”
+    3. “03 — Plan”
+       - “Co-create a 60–90 day roadmap with clear priorities and responsibilities.”
+    4. “04 — Execute”
+       - “Hands-on BD, intros, and education — with weekly check-ins and measurable outcomes.”
+  - Include a short note that Jordan typically works either:
+    - On a clear project-based scope, or
+    - On a fractional retainer (e.g., 1 day a week).
+
+6) “Testimonials / Outcomes” section (use placeholders):
+  - Heading: “Results that actually matter” 
+  - Use 2–3 placeholder testimonial cards with lorem ipsum text and labels like:
+    - “Head of BD, DeFi Protocol”
+    - “Founder, Crypto Infra Startup”
+    - “CIO, Multi-Family Office”
+  - Make it visually clear they’re placeholders so I can replace them later.
+
+7) “Contact” / CTA section:
+  - Heading: “Let’s see if there’s a fit”
+  - Short copy:
+    - “Share a bit about your team and what you’re building or solving for. I’ll respond within 1–2 business days with next steps or a link to schedule a call.”
+  - Include a clean contact form with:
+    - Name
+    - Email
+    - Organization
+    - Role
+    - “Which best describes you?” (dropdown: “Crypto / DeFi team”, “RIA / wealth firm”, “Family office”, “Other”)
+    - Free-text field: “What do you want help with?”
+  - A secondary option: a simple text link “Prefer email? Reach out at hello@[placeholder].com”.
+
+Visual design details:
+- Layout:
+  - Fully responsive (desktop, tablet, mobile).
+  - Generous white space, clear section separation.
+- Colors:
+  - Base: dark background with light text OR very light background with a deep navy/charcoal accent. Avoid harsh neon; if you use an accent, keep it subtle (e.g., soft electric blue or teal).
+- Typography:
+  - Modern sans-serif.
+  - Clear hierarchy: bold, larger headings; body text around 16–18px.
+- Components:
+  - Cards with subtle drop shadows and rounded corners.
+  - Simple iconography (line icons) to hint at “network,” “strategy,” “education,” etc.
+- Overall feel:
+  - Serious, trustworthy, and calm; this is aimed at people managing real capital, not meme traders.
+
+Tech stack:
+- Use a simple stack that Replit can run easily.
+- A single-page site using HTML, CSS, and minimal JavaScript, or a lightweight React + CSS setup—whatever you can generate that is clean and easy to edit.
+- Keep the code organized and well-commented so I can tweak copy and links later.
+
+Finally:
+- Fill in all text with your best attempt at strong, polished marketing copy based on this brief.
+- Make sure the design and copy together clearly sell Jordan as:
+  - The bridge between TradFi advisors and crypto-native DeFi.
+  - A fractional BD partner for protocols.
+  - A trusted educator for RIAs and family offices.
