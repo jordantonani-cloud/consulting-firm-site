@@ -56,56 +56,64 @@
   --color-sidebar-ring: hsl(var(--sidebar-ring));
 }
 
-/* Dark Mode by Default for this "Dark Fintech" look */
+/* Dark Mode by Default, matching the Deep Teal/Forest Green of the logo */
 :root {
-  /* Dark Charcoal Background -> Deep Forest Green/Charcoal mix */
-  --background: 150 30% 10%; /* Deep dark pine green */
-  --foreground: 140 20% 98%;
+  /* 
+     Logo Analysis:
+     The logo uses a deep, rich dark teal/green. 
+     Let's use that as the base for the dark theme.
+     Approximate HSL for that deep teal: 185 40% 15%
+  */
+  
+  /* Deep Forest/Teal Background */
+  --background: 185 50% 8%; 
+  --foreground: 180 20% 96%;
 
-  /* Slightly lighter card background */
-  --card: 150 25% 13%;
-  --card-foreground: 140 20% 98%;
+  /* Cards are slightly lighter teal */
+  --card: 185 40% 12%;
+  --card-foreground: 180 20% 96%;
 
-  --popover: 150 25% 13%;
-  --popover-foreground: 140 20% 98%;
+  --popover: 185 40% 12%;
+  --popover-foreground: 180 20% 96%;
 
-  /* Pacific Teal/Silver Accent */
-  --primary: 170 70% 45%; /* Teal */
-  --primary-foreground: 150 30% 10%;
+  /* Accent Color: A brighter, electric teal to pop against the dark background, 
+     inspired by the "graph" lines in the logo */
+  --primary: 170 70% 60%; 
+  --primary-foreground: 185 50% 8%;
 
-  /* Muted Slate/Mist */
-  --secondary: 200 15% 30%;
-  --secondary-foreground: 140 20% 98%;
+  /* Secondary: Muted slate/grey-blue for tags and secondary elements */
+  --secondary: 200 20% 25%;
+  --secondary-foreground: 180 20% 96%;
 
-  --muted: 200 15% 30%;
+  --muted: 200 20% 25%;
   --muted-foreground: 180 10% 70%;
 
-  --accent: 170 70% 45%;
-  --accent-foreground: 150 30% 10%;
+  --accent: 170 70% 60%;
+  --accent-foreground: 185 50% 8%;
 
   --destructive: 0 62% 30%;
-  --destructive-foreground: 140 20% 98%;
+  --destructive-foreground: 180 20% 96%;
 
-  --border: 200 15% 30%;
-  --input: 200 15% 30%;
-  --ring: 170 70% 45%;
+  --border: 185 30% 20%;
+  --input: 185 30% 20%;
+  --ring: 170 70% 60%;
 
   --radius: 0.5rem;
 
-  --chart-1: 170 70% 50%;
-  --chart-2: 140 50% 45%;
-  --chart-3: 190 60% 55%;
-  --chart-4: 220 40% 60%;
-  --chart-5: 160 40% 50%;
+  --chart-1: 170 70% 60%;
+  --chart-2: 150 60% 50%;
+  --chart-3: 190 60% 60%;
+  --chart-4: 210 50% 60%;
+  --chart-5: 160 50% 55%;
 
-  --sidebar: 150 30% 10%;
-  --sidebar-foreground: 140 20% 98%;
-  --sidebar-primary: 170 70% 45%;
-  --sidebar-primary-foreground: 150 30% 10%;
-  --sidebar-accent: 200 15% 30%;
-  --sidebar-accent-foreground: 140 20% 98%;
-  --sidebar-border: 200 15% 30%;
-  --sidebar-ring: 170 70% 45%;
+  --sidebar: 185 50% 8%;
+  --sidebar-foreground: 180 20% 96%;
+  --sidebar-primary: 170 70% 60%;
+  --sidebar-primary-foreground: 185 50% 8%;
+  --sidebar-accent: 200 20% 25%;
+  --sidebar-accent-foreground: 180 20% 96%;
+  --sidebar-border: 185 30% 20%;
+  --sidebar-ring: 170 70% 60%;
 }
 
 @layer base {
