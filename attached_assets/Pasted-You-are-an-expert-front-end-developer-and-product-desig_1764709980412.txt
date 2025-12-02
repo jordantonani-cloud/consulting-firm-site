@@ -1,0 +1,172 @@
+You are an expert front-end developer and product designer.
+
+I already have a working marketing site in this Replit project. I want you to KEEP the existing structure and most of the copy, but:
+
+1) Rebrand everything to **Northwest Onchain Hub**  
+2) Apply a clean, modern, PNW + fintech design system  
+3) Improve visual hierarchy and CTAs for better conversions
+
+Please do NOT rewrite the whole app or drastically change the layout. Instead, refactor the CSS / components and lightly adjust copy where needed to reflect the new brand.
+
+====================
+BRAND + VISUAL SYSTEM
+====================
+
+Brand name: **Northwest Onchain Hub**
+
+Tagline (use in hero and SEO tags):
+> Onchain BD & crypto education for RIAs, family offices, and DeFi teams in the Pacific Northwest.
+
+Overall vibe:
+- “Modern fintech from the Pacific Northwest”
+- Serious enough for RIAs / family offices, still crypto-native
+- Minimal, lots of whitespace, no neon, no meme-y visuals
+
+-------------
+Color palette
+-------------
+
+Define these as CSS variables at the root and use them consistently:
+
+:root {
+  --color-bg: #F8F5F0;         /* warm off-white background */
+  --color-bg-dark: #050B14;    /* dark navy for hero/footer */
+  --color-text: #1F2933;       /* main body text */
+  --color-muted: #8A93A5;      /* labels, borders */
+  --color-accent: #3AD0C3;     /* teal accent for CTAs/icons */
+  --color-accent-hover: #29B6A9;
+}
+
+Usage:
+- Light sections: background `var(--color-bg)`, text `var(--color-text)`.
+- Hero + footer: background `var(--color-bg-dark)`, text white or `var(--color-bg)`.
+- Accent teal ONLY for:
+  - Primary buttons
+  - Links on hover
+  - Key icons / small lines
+- Borders and subtle dividers: very light grey from `rgba(0,0,0,0.06)` or a lightened version of `--color-muted`.
+
+------
+Typography
+------
+
+Use Google fonts (or equivalent) and apply globally:
+
+Headings (h1–h3): **Space Grotesk**  
+Body: **Inter**
+
+In CSS:
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  color: var(--color-text);
+  background: var(--color-bg);
+}
+
+h1, h2, h3 {
+  font-family: 'Space Grotesk', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  letter-spacing: 0.03em;
+}
+
+Desktop sizing guideline (you can adapt but keep hierarchy clear):
+- h1: 40–48px, bold
+- h2: 28–32px, semi-bold
+- h3: 22–24px, semi-bold
+- body: 16–18px
+
+-----------
+Buttons / CTAs
+-----------
+
+Standardize all main calls-to-action (like “Contact”, “Schedule”, etc.) to a single primary CTA text:
+
+**Primary CTA text:** “Book a 30-minute discovery call”
+
+Primary button style:
+- Background: `var(--color-accent)`
+- Text: `var(--color-bg-dark)`
+- Border radius: 999px (pill) OR 8px (slightly rounded) — pick ONE and use it everywhere
+- Font weight: 600
+- Padding: 12px 24px on desktop
+- Hover:
+  - Background: `var(--color-accent-hover)`
+  - Slight box-shadow and upward translate (1–2px)
+
+Secondary button style (e.g., “Download services overview”):
+- Transparent or light background (`var(--color-bg)`)
+- Border: 1px solid `var(--color-muted)`
+- Text: `var(--color-text)`
+- Hover: very light grey background with same border.
+
+Place a primary CTA in:
+- The hero section (most prominent)
+- Near the end of each main section (Services, About, Contact)
+- Footer (small version)
+
+---------
+Layout & spacing
+---------
+
+Please keep the current content structure, but make it visually cleaner:
+
+- Constrain main content to a centered max-width of ~1100–1200px.
+- Use generous vertical spacing between sections: 80–120px on desktop, less on mobile.
+- Use a simple 12-column layout or equivalent so cards and columns line up.
+
+Cards (for services, “who I work with”, etc.):
+- Background: white or very light (`#FFFFFF` or a slightly off-white)
+- Border-radius: 8px
+- Border: 1px solid `rgba(0, 0, 0, 0.04)` OR subtle shadow
+- Internal padding: 24–32px
+- Optional accent detail: a small teal line or icon at the top of each card.
+
+Hero section:
+- Dark navy background (`var(--color-bg-dark)`)
+- Left: headline, subheadline, bullets, primary + secondary CTAs.
+- Right: keep or create a simple abstract illustration or card that mixes:
+  - a mountain / peak outline
+  - a few connected nodes/lines (to suggest “onchain”)
+  No photos of coins or charts.
+
+--------
+Brand text updates
+--------
+
+Adjust any copy that still references previous brand names so that it reads:
+
+- Brand: **Northwest Onchain Hub**
+- Short description (use in hero or subhead):
+
+  “A Seattle-based advisory helping DeFi teams, RIAs, and family offices bridge TradFi and onchain finance.”
+
+Where the site introduces me, use something like:
+
+> “I’m Jordan, a former Morgan Stanley advisor now working full-time in crypto and DeFi BD. Northwest Onchain Hub is my small advisory focused on onchain BD and crypto education for serious institutions in the Pacific Northwest and beyond.”
+
+Make sure this voice stays concise and professional.
+
+----------------
+Responsiveness
+----------------
+
+Ensure the updated design works nicely on mobile and tablet:
+
+- Stack hero layout vertically on smaller screens (headline + CTA on top, illustration below).
+- Cards become single-column on narrow viewports.
+- Buttons remain large and tap-friendly (min height ~44px).
+
+---------------
+Implementation notes
+---------------
+
+- Centralize the new design in a main stylesheet (e.g. `styles.css`) using CSS variables for easy future tweaks.
+- Update the HTML to load the new fonts.
+- Do NOT remove existing content/sections unless strictly necessary; just restyle and lightly reword to match the new brand.
+- When you’re done, the site should clearly look like a cohesive, professional marketing site for “Northwest Onchain Hub”, with a strong hero section and consistent CTAs directing to the discovery call.
+
+Now, please go through the existing files in this Replit project and:
+1) Implement this design system,
+2) Update the branding and CTAs,
+3) Clean up any inconsistent spacing or typography.
+
+Explain briefly in comments or a short note in the code what you changed.
