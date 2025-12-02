@@ -48,12 +48,50 @@ export default function Home() {
     setIsMobileMenuOpen(false);
   };
 
-  const handleContactSubmit = (e: React.FormEvent) => {
+  const handleContactSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    toast({
-      title: "Message sent",
-      description: "Thanks for reaching out. I'll get back to you within 1-2 business days.",
-    });
+    
+    const formData = new FormData(e.currentTarget);
+    const data = {
+      name: formData.get('name') as string,
+      email: formData.get('email') as string,
+      organization: formData.get('organization') as string || undefined,
+      role: formData.get('role') as string || undefined,
+      type: formData.get('type') as string,
+      message: formData.get('message') as string,
+    };
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
+
+      const result = await response.json();
+
+      if (response.ok) {
+        toast({
+          title: "Message sent!",
+          description: result.message,
+        });
+        e.currentTarget.reset();
+      } else {
+        toast({
+          title: "Error",
+          description: result.message || "Failed to send message. Please try again.",
+          variant: "destructive",
+        });
+      }
+    } catch (error) {
+      toast({
+        title: "Error",
+        description: "Failed to send message. Please check your connection and try again.",
+        variant: "destructive",
+      });
+    }
   };
 
   return (
@@ -449,28 +487,28 @@ export default function Home() {
                 <form onSubmit={handleContactSubmit} className="space-y-6">
                   <div className="space-y-2">
                     <Label htmlFor="name">Name</Label>
-                    <Input id="name" placeholder="Jane Doe" required className="bg-background border-border h-12 focus:ring-primary" />
+                    <Input id="name" name="name" placeholder="Jane Doe" required className="bg-background border-border h-12 focus:ring-primary" />
                   </div>
                   
                   <div className="space-y-2">
                     <Label htmlFor="email">Email</Label>
-                    <Input id="email" type="email" placeholder="jane@company.com" required className="bg-background border-border h-12 focus:ring-primary" />
+                    <Input id="email" name="email" type="email" placeholder="jane@company.com" required className="bg-background border-border h-12 focus:ring-primary" />
                   </div>
                   
                   <div className="grid grid-cols-2 gap-4">
                     <div className="space-y-2">
                       <Label htmlFor="org">Organization</Label>
-                      <Input id="org" placeholder="Company Ltd." className="bg-background border-border h-12 focus:ring-primary" />
+                      <Input id="org" name="organization" placeholder="Company Ltd." className="bg-background border-border h-12 focus:ring-primary" />
                     </div>
                     <div className="space-y-2">
                       <Label htmlFor="role">Role</Label>
-                      <Input id="role" placeholder="Founder, CIO..." className="bg-background border-border h-12 focus:ring-primary" />
+                      <Input id="role" name="role" placeholder="Founder, CIO..." className="bg-background border-border h-12 focus:ring-primary" />
                     </div>
                   </div>
 
                   <div className="space-y-2">
                     <Label htmlFor="type">Which best describes you?</Label>
-                    <Select>
+                    <Select name="type" required>
                       <SelectTrigger className="bg-background border-border h-12 focus:ring-primary">
                         <SelectValue placeholder="Select option" />
                       </SelectTrigger>
@@ -486,7 +524,7 @@ export default function Home() {
 
                   <div className="space-y-2">
                     <Label htmlFor="message">What do you want help with?</Label>
-                    <Textarea id="message" placeholder="Briefly describe your goals..." className="min-h-[120px] bg-background border-border resize-none focus:ring-primary" />
+                    <Textarea id="message" name="message" placeholder="Briefly describe your goals..." required className="min-h-[120px] bg-background border-border resize-none focus:ring-primary" />
                   </div>
 
                   <Button type="submit" className="w-full btn-primary h-12 text-base">
