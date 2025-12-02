@@ -58,54 +58,54 @@
 
 /* Dark Mode by Default for this "Dark Fintech" look */
 :root {
-  /* Dark Charcoal Background */
-  --background: 222 47% 11%;
-  --foreground: 210 40% 98%;
+  /* Dark Charcoal Background -> Deep Forest Green/Charcoal mix */
+  --background: 150 30% 10%; /* Deep dark pine green */
+  --foreground: 140 20% 98%;
 
   /* Slightly lighter card background */
-  --card: 222 47% 14%;
-  --card-foreground: 210 40% 98%;
+  --card: 150 25% 13%;
+  --card-foreground: 140 20% 98%;
 
-  --popover: 222 47% 14%;
-  --popover-foreground: 210 40% 98%;
+  --popover: 150 25% 13%;
+  --popover-foreground: 140 20% 98%;
 
-  /* Electric Blue/Teal Accent */
-  --primary: 199 89% 48%;
-  --primary-foreground: 222 47% 11%;
+  /* Pacific Teal/Silver Accent */
+  --primary: 170 70% 45%; /* Teal */
+  --primary-foreground: 150 30% 10%;
 
-  /* Muted Blue-Grey */
-  --secondary: 217 19% 27%;
-  --secondary-foreground: 210 40% 98%;
+  /* Muted Slate/Mist */
+  --secondary: 200 15% 30%;
+  --secondary-foreground: 140 20% 98%;
 
-  --muted: 217 19% 27%;
-  --muted-foreground: 215 20% 65%;
+  --muted: 200 15% 30%;
+  --muted-foreground: 180 10% 70%;
 
-  --accent: 199 89% 48%;
-  --accent-foreground: 222 47% 11%;
+  --accent: 170 70% 45%;
+  --accent-foreground: 150 30% 10%;
 
   --destructive: 0 62% 30%;
-  --destructive-foreground: 210 40% 98%;
+  --destructive-foreground: 140 20% 98%;
 
-  --border: 217 19% 27%;
-  --input: 217 19% 27%;
-  --ring: 199 89% 48%;
+  --border: 200 15% 30%;
+  --input: 200 15% 30%;
+  --ring: 170 70% 45%;
 
   --radius: 0.5rem;
 
-  --chart-1: 220 70% 50%;
-  --chart-2: 160 60% 45%;
-  --chart-3: 30 80% 55%;
-  --chart-4: 280 65% 60%;
-  --chart-5: 340 75% 55%;
+  --chart-1: 170 70% 50%;
+  --chart-2: 140 50% 45%;
+  --chart-3: 190 60% 55%;
+  --chart-4: 220 40% 60%;
+  --chart-5: 160 40% 50%;
 
-  --sidebar: 222 47% 11%;
-  --sidebar-foreground: 210 40% 98%;
-  --sidebar-primary: 199 89% 48%;
-  --sidebar-primary-foreground: 222 47% 11%;
-  --sidebar-accent: 217 19% 27%;
-  --sidebar-accent-foreground: 210 40% 98%;
-  --sidebar-border: 217 19% 27%;
-  --sidebar-ring: 199 89% 48%;
+  --sidebar: 150 30% 10%;
+  --sidebar-foreground: 140 20% 98%;
+  --sidebar-primary: 170 70% 45%;
+  --sidebar-primary-foreground: 150 30% 10%;
+  --sidebar-accent: 200 15% 30%;
+  --sidebar-accent-foreground: 140 20% 98%;
+  --sidebar-border: 200 15% 30%;
+  --sidebar-ring: 170 70% 45%;
 }
 
 @layer base {

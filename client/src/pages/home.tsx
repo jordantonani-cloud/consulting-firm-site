@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { ArrowRight, Check, Menu, X, ChevronRight, ExternalLink, Network, Shield, BarChart3, GraduationCap, Briefcase, Building2, Users } from "lucide-react";
+import { ArrowRight, Check, Menu, X, ChevronRight, ExternalLink, Network, Shield, BarChart3, GraduationCap, Briefcase, Building2, Users, Mountain, Compass } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -8,7 +8,8 @@ import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
-import heroBg from "@assets/generated_images/abstract_digital_network_map_background_for_fintech_website.png";
+import heroBg from "@assets/generated_images/misty_pacific_northwest_forest_landscape_with_subtle_digital_overlay.png";
+import profilePic from "@assets/generated_images/professional_headshot_of_a_consultant_in_a_modern_setting.png";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 20 },
@@ -66,9 +67,9 @@ export default function Home() {
         <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
           <div className="font-heading font-bold text-xl md:text-2xl tracking-tight flex items-center gap-2">
             <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center text-background">
-              <Network size={18} />
+              <Mountain size={18} />
             </div>
-            Tonani Onchain Advisory
+            Northwest Onchain Hub
           </div>
 
           {/* Desktop Nav */}
@@ -126,7 +127,7 @@ export default function Home() {
           <div className="absolute inset-0 bg-gradient-to-r from-background via-background/95 to-background/40 z-10" />
           <img 
             src={heroBg} 
-            alt="Network Background" 
+            alt="Misty Forest Background" 
             className="w-full h-full object-cover opacity-60"
           />
         </div>
@@ -143,16 +144,16 @@ export default function Home() {
                 ONCHAIN / DEFI BD
               </span>
               <span className="px-3 py-1 rounded-full bg-secondary text-secondary-foreground text-xs font-semibold tracking-wide border border-white/5">
-                RIA & FAMILY OFFICE CRYPTO EDUCATION
+                CORPORATE STRATEGY & EDUCATION
               </span>
             </motion.div>
             
             <motion.h1 variants={fadeInUp} className="text-4xl md:text-6xl lg:text-7xl font-heading font-bold leading-[1.1] mb-6 text-foreground">
-              Onchain BD & Crypto Strategy for <span className="text-primary">Serious Institutions</span>
+              Onchain Strategy from the <span className="text-primary">Pacific Northwest</span>
             </motion.h1>
             
             <motion.p variants={fadeInUp} className="text-lg md:text-xl text-muted-foreground mb-10 max-w-2xl leading-relaxed">
-              I help crypto teams, RIAs, and family offices navigate onchain lending, DeFi, and digital assets — from partnerships and integrations to client-ready education.
+              Helping protocols, enterprises, and family offices navigate the digital asset frontier with clarity, integrity, and strategic foresight.
             </motion.p>
             
             <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row gap-4">
@@ -177,19 +178,14 @@ export default function Home() {
               whileInView="visible"
               viewport={{ once: true }}
               variants={fadeInUp}
+              className="relative"
             >
-              <h2 className="text-3xl md:text-4xl font-bold mb-6 text-foreground">Bridging Wall Street and DeFi</h2>
-              <div className="space-y-4 text-muted-foreground text-lg leading-relaxed">
-                <p>
-                  I started my career as a financial advisor at Morgan Stanley before going full-time into crypto and DeFi. This dual background gives me a unique vantage point.
-                </p>
-                <p>
-                  My expertise lies in onchain structured products, DeFi lending markets, and building deep relationships with trading firms, custodians, and major protocols.
-                </p>
-                <p>
-                  I speak both "advisor language" and "crypto-native language" — translating complex onchain mechanics into institutional-grade strategies.
-                </p>
-              </div>
+               <div className="absolute -inset-4 bg-primary/5 rounded-2xl rotate-3 blur-sm -z-10"></div>
+               <img 
+                  src={profilePic} 
+                  alt="Jordan Tonani" 
+                  className="w-full h-auto rounded-xl border border-white/10 shadow-2xl object-cover aspect-[4/5]"
+                />
             </motion.div>
 
             <motion.div 
@@ -197,23 +193,37 @@ export default function Home() {
               whileInView="visible"
               viewport={{ once: true }}
               variants={staggerContainer}
-              className="bg-card border border-white/5 rounded-2xl p-8 md:p-10"
             >
-              <h3 className="text-xl font-semibold mb-6 text-foreground">What this means for you</h3>
-              <ul className="space-y-6">
-                {[
-                  { icon: Shield, text: "Practical, compliance-aware frameworks — not hype." },
-                  { icon: Network, text: "Warm access to real onchain and institutional players." },
-                  { icon: BarChart3, text: "Clear roadmaps your team can execute immediately." }
-                ].map((item, i) => (
-                  <motion.li key={i} variants={fadeInUp} className="flex items-start gap-4">
-                    <div className="mt-1 w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0 text-primary border border-primary/20">
-                      <item.icon size={20} />
-                    </div>
-                    <span className="text-lg text-card-foreground pt-2">{item.text}</span>
-                  </motion.li>
-                ))}
-              </ul>
+              <h2 className="text-3xl md:text-4xl font-bold mb-6 text-foreground">Bridging Wall Street and DeFi</h2>
+              <div className="space-y-4 text-muted-foreground text-lg leading-relaxed mb-8">
+                <p>
+                  I’m Jordan Tonani. I started my career as a financial advisor at Morgan Stanley before going full-time into crypto and DeFi.
+                </p>
+                <p>
+                  Based in the Pacific Northwest, I bring a grounded, long-term perspective to a fast-moving industry. My expertise lies in onchain structured products, DeFi lending markets, and building bridges between traditional finance and the new digital economy.
+                </p>
+                <p>
+                  Whether you're a protocol looking to grow or a traditional firm looking to understand, I speak both languages fluently.
+                </p>
+              </div>
+
+              <div className="bg-card border border-white/5 rounded-2xl p-8">
+                <h3 className="text-xl font-semibold mb-6 text-foreground">What this means for you</h3>
+                <ul className="space-y-4">
+                  {[
+                    { icon: Shield, text: "Practical, compliance-aware frameworks — not hype." },
+                    { icon: Network, text: "Warm access to real onchain and institutional players." },
+                    { icon: Compass, text: "Clear roadmaps your team can execute immediately." }
+                  ].map((item, i) => (
+                    <motion.li key={i} variants={fadeInUp} className="flex items-start gap-4">
+                      <div className="mt-1 w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0 text-primary border border-primary/20">
+                        <item.icon size={16} />
+                      </div>
+                      <span className="text-base text-card-foreground pt-1">{item.text}</span>
+                    </motion.li>
+                  ))}
+                </ul>
+              </div>
             </motion.div>
           </div>
         </div>
@@ -224,10 +234,10 @@ export default function Home() {
         <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-2xl mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Services</h2>
-            <p className="text-muted-foreground text-lg">Two distinct offerings for two distinct worlds.</p>
+            <p className="text-muted-foreground text-lg">Strategic guidance for three distinct worlds.</p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-3 gap-6">
             {/* Service Card A */}
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
@@ -236,39 +246,39 @@ export default function Home() {
               transition={{ delay: 0.1 }}
               className="group hover:border-primary/50 transition-colors duration-300"
             >
-              <Card className="h-full bg-card border-white/5 relative overflow-hidden">
+              <Card className="h-full bg-card border-white/5 relative overflow-hidden flex flex-col">
                 <div className="absolute top-0 right-0 p-6 opacity-10 group-hover:opacity-20 transition-opacity">
-                  <Network size={120} />
+                  <Network size={100} />
                 </div>
                 <CardHeader className="pb-4 relative z-10">
                   <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center text-primary mb-6 border border-primary/20">
                     <Briefcase />
                   </div>
-                  <CardTitle className="text-2xl md:text-3xl mb-2">Onchain / DeFi BD</CardTitle>
-                  <CardDescription className="text-base font-medium text-primary">
-                    For protocols, infra teams, and crypto-native products
+                  <CardTitle className="text-xl md:text-2xl mb-2">Onchain / DeFi BD</CardTitle>
+                  <CardDescription className="text-sm font-medium text-primary">
+                    For protocols & crypto-native products
                   </CardDescription>
                 </CardHeader>
-                <CardContent className="relative z-10 space-y-8">
-                  <ul className="space-y-3 text-muted-foreground">
+                <CardContent className="relative z-10 space-y-6 flex-grow">
+                  <ul className="space-y-3 text-muted-foreground text-sm">
                     {[
-                      "Fractional Head of BD (1–2 days per week)",
-                      "Partnership & integration strategy (wallets, MMs, exchanges)",
-                      "Go-to-market for new DeFi / lending products",
-                      "Institutional narrative and pitch refinement"
+                      "Fractional Head of BD",
+                      "Partnership & integration strategy",
+                      "Go-to-market for new products",
+                      "Institutional narrative refinement"
                     ].map((item, i) => (
                       <li key={i} className="flex items-start gap-2">
-                        <Check className="w-5 h-5 text-primary shrink-0 mt-0.5" />
+                        <Check className="w-4 h-4 text-primary shrink-0 mt-0.5" />
                         <span>{item}</span>
                       </li>
                     ))}
                   </ul>
-                  <div className="pt-6 border-t border-white/5">
-                    <p className="text-card-foreground font-medium italic">
-                      "Turn scattered conversations into a focused pipeline, warm intros, and shipped integrations."
-                    </p>
-                  </div>
                 </CardContent>
+                <div className="p-6 pt-0 mt-auto border-t border-white/5 relative z-10">
+                    <p className="text-card-foreground font-medium italic text-sm mt-4">
+                      "Turn scattered conversations into a focused pipeline."
+                    </p>
+                </div>
               </Card>
             </motion.div>
 
@@ -280,39 +290,83 @@ export default function Home() {
               transition={{ delay: 0.2 }}
               className="group hover:border-primary/50 transition-colors duration-300"
             >
-              <Card className="h-full bg-card border-white/5 relative overflow-hidden">
+              <Card className="h-full bg-card border-white/5 relative overflow-hidden flex flex-col">
                 <div className="absolute top-0 right-0 p-6 opacity-10 group-hover:opacity-20 transition-opacity">
-                  <GraduationCap size={120} />
+                  <GraduationCap size={100} />
                 </div>
                 <CardHeader className="pb-4 relative z-10">
                   <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center text-primary mb-6 border border-primary/20">
                     <Building2 />
                   </div>
-                  <CardTitle className="text-2xl md:text-3xl mb-2">Crypto Education for RIAs</CardTitle>
-                  <CardDescription className="text-base font-medium text-primary">
-                    For wealth managers, CIOs, advisor platforms, and FOs
+                  <CardTitle className="text-xl md:text-2xl mb-2">RIA & Family Office Education</CardTitle>
+                  <CardDescription className="text-sm font-medium text-primary">
+                    For wealth managers & CIOs
                   </CardDescription>
                 </CardHeader>
-                <CardContent className="relative z-10 space-y-8">
-                  <ul className="space-y-3 text-muted-foreground">
+                <CardContent className="relative z-10 space-y-6 flex-grow">
+                  <ul className="space-y-3 text-muted-foreground text-sm">
                     {[
-                      "Client-ready workshops: Crypto & DeFi 101 → 201",
-                      "Frameworks for risk, due diligence, and product selection",
-                      "How to talk to clients about digital assets responsibly",
-                      "Roadmaps for integrating onchain opportunities over 12–24 months"
+                      "Client-ready workshops (101 → 201)",
+                      "Risk & due diligence frameworks",
+                      "Client communication strategy",
+                      "Integration roadmaps (12–24 mo)"
                     ].map((item, i) => (
                       <li key={i} className="flex items-start gap-2">
-                        <Check className="w-5 h-5 text-primary shrink-0 mt-0.5" />
+                        <Check className="w-4 h-4 text-primary shrink-0 mt-0.5" />
                         <span>{item}</span>
                       </li>
                     ))}
                   </ul>
-                  <div className="pt-6 border-t border-white/5">
-                    <p className="text-xs text-muted-foreground opacity-70">
-                      Education only. This is not individualized investment, legal, or tax advice.
-                    </p>
-                  </div>
                 </CardContent>
+                 <div className="p-6 pt-0 mt-auto border-t border-white/5 relative z-10">
+                    <p className="text-xs text-muted-foreground opacity-70 mt-4">
+                      Education only. Not investment advice.
+                    </p>
+                </div>
+              </Card>
+            </motion.div>
+
+             {/* Service Card C */}
+             <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.3 }}
+              className="group hover:border-primary/50 transition-colors duration-300"
+            >
+              <Card className="h-full bg-card border-white/5 relative overflow-hidden flex flex-col">
+                <div className="absolute top-0 right-0 p-6 opacity-10 group-hover:opacity-20 transition-opacity">
+                  <BarChart3 size={100} />
+                </div>
+                <CardHeader className="pb-4 relative z-10">
+                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center text-primary mb-6 border border-primary/20">
+                    <Compass />
+                  </div>
+                  <CardTitle className="text-xl md:text-2xl mb-2">Corporate Onchain Strategy</CardTitle>
+                  <CardDescription className="text-sm font-medium text-primary">
+                    For traditional enterprises
+                  </CardDescription>
+                </CardHeader>
+                <CardContent className="relative z-10 space-y-6 flex-grow">
+                  <ul className="space-y-3 text-muted-foreground text-sm">
+                    {[
+                      "Identify high-impact onchain use cases",
+                      "Tokenization strategy & vendor selection",
+                      "Stablecoin settlement integration",
+                      "Competitive landscape analysis"
+                    ].map((item, i) => (
+                      <li key={i} className="flex items-start gap-2">
+                        <Check className="w-4 h-4 text-primary shrink-0 mt-0.5" />
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </CardContent>
+                <div className="p-6 pt-0 mt-auto border-t border-white/5 relative z-10">
+                    <p className="text-card-foreground font-medium italic text-sm mt-4">
+                      "Move from 'exploring' to 'executing' with confidence."
+                    </p>
+                </div>
               </Card>
             </motion.div>
           </div>
@@ -342,9 +396,9 @@ export default function Home() {
                 icon: Building2
               },
               {
-                title: "Trading Firms",
-                desc: "Trading desks, market makers, and prop shops exploring DeFi and onchain liquidity.",
-                icon: BarChart3
+                title: "Traditional Enterprises",
+                desc: "Corporations looking to leverage stablecoins, tokenization, or onchain loyalty.",
+                icon: Briefcase
               }
             ].map((item, i) => (
               <motion.div 
@@ -471,7 +525,7 @@ export default function Home() {
                   </div>
                   <div>
                     <p className="text-sm text-muted-foreground">Email</p>
-                    <a href="mailto:hello@tonanionchain.com" className="text-foreground hover:text-primary font-medium">hello@[placeholder].com</a>
+                    <a href="mailto:hello@northwestonchain.com" className="text-foreground hover:text-primary font-medium">hello@[placeholder].com</a>
                   </div>
                 </div>
               </div>
@@ -510,6 +564,7 @@ export default function Home() {
                       <SelectContent>
                         <SelectItem value="crypto">Crypto / DeFi team</SelectItem>
                         <SelectItem value="ria">RIA / Wealth firm</SelectItem>
+                        <SelectItem value="corporate">Traditional Enterprise</SelectItem>
                         <SelectItem value="family">Family office</SelectItem>
                         <SelectItem value="other">Other</SelectItem>
                       </SelectContent>
@@ -534,7 +589,7 @@ export default function Home() {
       {/* Footer */}
       <footer className="py-8 border-t border-white/5 bg-background text-center text-sm text-muted-foreground">
         <div className="container mx-auto px-4">
-          <p>© {new Date().getFullYear()} Tonani Onchain Advisory. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Northwest Onchain Hub. All rights reserved.</p>
         </div>
       </footer>
     </div>
