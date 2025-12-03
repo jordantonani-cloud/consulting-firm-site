@@ -103,7 +103,7 @@ export default function Home() {
       >
         <div className="container-constrained flex items-center justify-between">
           <div className="flex items-center">
-            <img src="/logo.svg" alt="Northwest Onchain Hub" className="h-12 w-auto" />
+            <img src="/logo.jpg" alt="Northwest Onchain Hub" className="h-12 w-auto" />
           </div>
 
           {/* Desktop Nav */}
@@ -565,8 +565,8 @@ export default function Home() {
                 </div>
                 <div>
                   <p className="text-sm text-muted-foreground">Prefer email?</p>
-                  <a href="mailto:hello@northwestonchainhub.com" className="text-foreground hover:text-primary font-medium transition-colors">
-                    hello@northwestonchainhub.com
+                  <a href="mailto:hello@northwestonchain.com" className="text-foreground hover:text-primary font-medium transition-colors">
+                    hello@northwestonchain.com
                   </a>
                 </div>
               </div>
@@ -632,7 +632,7 @@ export default function Home() {
         <div className="container-constrained">
           <div className="flex flex-col items-center gap-6 mb-8">
              <div className="flex items-center">
-                <img src="/logo.svg" alt="Northwest Onchain Hub" className="h-16 w-auto" />
+                <img src="/logo.jpg" alt="Northwest Onchain Hub" className="h-16 w-auto" />
               </div>
               <p className="text-white/60 max-w-md mx-auto text-center">
                 Based in Seattle, working with clients globally.
