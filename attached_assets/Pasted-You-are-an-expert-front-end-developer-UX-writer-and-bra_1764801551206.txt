@@ -1,0 +1,268 @@
+You are an expert front-end developer, UX writer, and brand designer.
+
+You are editing the existing marketing site in this Replit project for:
+
+**Brand:** Northwest Onchain Hub  
+**Founder:** Jordan Tonani  
+**Location:** Seattle / Pacific Northwest  
+
+Do NOT rebuild the app from scratch. Keep the existing structure and styling where possible, but:
+
+- Upgrade the copy to be more compelling and specific.
+- Make the homepage clearly explain WHO this is for, WHAT the offers are, and HOW to work with Jordan.
+- Make sure the navigation, hero, sections, and CTAs all reflect the updated messaging below.
+
+=====================
+1. GLOBAL CLEANUP
+=====================
+
+- Make sure the site title and any existing headings use: **Northwest Onchain Hub** (no hyphen in Onchain).
+- If there is a “Contact us” or similar generic button, change primary CTAs to:  
+  **"Book a 30-minute discovery call"**.
+- If not already using them, install and apply fonts:
+  - Headings: “Space Grotesk”
+  - Body: “Inter”
+- Use the color palette we discussed earlier:
+  - Background light: `#F8F5F0`
+  - Dark navy: `#050B14`
+  - Accent teal: `#3AD0C3`
+  - Text: `#1F2933`
+
+=====================
+2. HERO SECTION
+=====================
+
+Update the hero to:
+
+- Dark background (`#050B14`)
+- Left side: headline, subheadline, bullets, primary + secondary CTAs.
+- Right side: keep whatever layout exists, but this is where a simple abstract illustration can live if there is one.
+
+Replace the hero copy with EXACTLY this (adjust HTML tags as needed):
+
+Headline (H1):
+> Bridging DeFi and serious capital in the Pacific Northwest
+
+Subheadline:
+> Northwest Onchain Hub helps DeFi teams, RIAs, family offices, and forward-looking businesses turn onchain finance into real clients, partners, and defensible strategy.
+
+Under that, add three short bullets or tags:
+- Onchain BD for DeFi & crypto teams  
+- Crypto strategy & education for RIAs & family offices  
+- Web3 opportunity mapping for fintechs & enterprises  
+
+Primary button:
+- Text: **Book a 30-minute discovery call**
+- Link: keep existing contact link or anchor to the contact form section.
+
+Secondary button (ghost / outline style):
+- Text: **Download services overview**
+- Link: placeholder `#` for now, but keep it wired so I can swap in a PDF later.
+
+=====================
+3. “ABOUT” SECTION
+=====================
+
+Add or update an About section below the hero with this structure:
+
+Section heading:
+> About Northwest Onchain Hub
+
+Subheading:
+> A bridge between Wall Street, DeFi, and the Pacific Northwest
+
+Body copy:
+
+> I’m Jordan Tonani, the founder of Northwest Onchain Hub.  
+>  
+> I started my career as a financial advisor at Morgan Stanley, then moved full-time into crypto and DeFi business development. I’ve worked with onchain lending platforms, structured products, and trading firms, and I’m deeply plugged into EVM-native DeFi, market makers, and the broader crypto ecosystem.  
+>  
+> Based in Seattle, I help DeFi teams, RIAs, family offices, and fintechs in the Pacific Northwest and beyond build real strategies around onchain finance—without the hype or the degen risk.
+
+Underneath, add a 3-bullet list titled “What this means for you”:
+
+- **I speak both languages.** I can translate between crypto-native teams and regulated, risk-aware institutions.  
+- **I focus on outcomes, not noise.** Fewer buzzwords, more clear strategies, integrations, and conversations that move the needle.  
+- **I’m selective.** I work with teams and firms that want to build durable, compliant, long-term onchain businesses.
+
+If there is a spot for an image, include a placeholder for a founder headshot with alt text “Photo of Jordan Tonani, founder of Northwest Onchain Hub”.
+
+=====================
+4. SERVICES SECTION
+=====================
+
+Create or update a “Services” section with three cards. Use a 3-column layout on desktop and stacked cards on mobile.
+
+Section heading:
+> Services
+
+Subheading:
+> Productized ways to work together
+
+Card 1 – Onchain BD Sprint (for DeFi teams)
+-------------------------------------------
+
+Title:
+> Onchain BD Sprint
+
+Tagline:
+> For DeFi, crypto, and onchain infra teams
+
+Body text:
+
+> A 6-week, focused business development sprint to turn scattered conversations into a real pipeline of partners and integrations.  
+>  
+> We map your ideal partners (wallets, custodians, exchanges, prop shops, RIAs, FOs), refine your institutional narrative, and run targeted outreach so you end up with actual meetings, not just a Discord funnel.
+
+Add a bullet list titled “You’ll leave with”:
+
+- A clear partner and account map for your vertical  
+- A prioritized list of 30–50 targets and intro paths  
+- Refined institutional messaging and outreach templates  
+- A live pipeline of qualified BD conversations
+
+Add a subtle line at the bottom:
+> Pricing: fixed-fee sprint with optional upside-aligned milestones.
+
+Card 2 – Crypto Strategy & Education (for RIAs / FOs)
+------------------------------------------------------
+
+Title:
+> Crypto Strategy & Education Program
+
+Tagline:
+> For RIAs, wealth firms, and family offices
+
+Body text:
+
+> A firm-level program to help RIAs and family offices decide how they will (and won’t) engage with crypto and onchain finance—and to give advisors the language to talk about it with clients.  
+>  
+> We combine a strategy intensive, advisor education sessions, and client-ready materials so your partners have a clear, defensible stance.
+
+“You’ll leave with” bullets:
+
+- A written 12–24 month digital asset / onchain strategy tailored to your firm  
+- Simple talking points and FAQs advisors can use with clients  
+- Training sessions that raise the floor of crypto literacy across the team
+
+Add a disclaimer line:
+> Education only. Nothing here is individualized investment, legal, or tax advice.
+
+Card 3 – Web3 Opportunity Lab (for businesses)
+----------------------------------------------
+
+Title:
+> Web3 Opportunity Lab
+
+Tagline:
+> For fintechs and forward-looking enterprises
+
+Body text:
+
+> A 4-week lab-style engagement to identify where (if anywhere) web3 and onchain finance actually make sense for your business.  
+>  
+> We explore concrete use cases—tokenization, onchain settlement, loyalty, data—and pressure-test them for business value, feasibility, and regulatory sanity.
+
+“You’ll leave with” bullets:
+
+- 1–2 prioritized web3 / onchain use cases mapped to your business model  
+- A short list of vendors, protocols, and partners worth talking to  
+- A 6–12 month implementation roadmap—or a clear “not now” if it doesn’t pencil out
+
+=====================
+5. “WHO I WORK WITH” SECTION
+=====================
+
+Add a section titled:
+
+> Who this is for
+
+Use three simple columns/cards:
+
+Column 1:
+Title: **DeFi & crypto teams**  
+Body:  
+> Onchain lending, structured products, DeFi protocols, infrastructure providers, and data platforms that need institutional-grade BD.
+
+Column 2:
+Title: **RIAs & family offices**  
+Body:  
+> Wealth managers who want a sane, defensible way to talk about crypto and onchain finance with clients.
+
+Column 3:
+Title: **Fintechs & enterprises**  
+Body:  
+> Teams exploring tokenization, stablecoins, or web3 features and looking for a clear decision on what’s worth building.
+
+=====================
+6. PROCESS SECTION
+=====================
+
+Add or refine a “How it works” / “Process” section with a 4-step horizontal layout on desktop, stacked on mobile.
+
+Section heading:
+> How we work together
+
+Steps (each as a small card):
+
+1. **01 — Discovery**  
+   > A 30–45 minute call to understand your goals, constraints, and what “success” looks like.
+
+2. **02 — Diagnosis**  
+   > We map your current situation across strategy, partners, and internal capabilities.
+
+3. **03 — Plan**  
+   > You get a clear 4–12 week roadmap: priorities, owners, and how we’ll measure progress.
+
+4. **04 — Execute**  
+   > We run the sprint: BD outreach, education, or opportunity mapping—with regular check-ins and concrete deliverables.
+
+At the bottom of the section, add a short line:
+> Most engagements are designed as low base fees plus upside aligned to adoption and real business outcomes, not hype.
+
+=====================
+7. CONTACT / CTA SECTION
+=====================
+
+Update the contact section to make it more personal and action-oriented.
+
+Section heading:
+> Let’s see if there’s a fit
+
+Short paragraph:
+
+> If you’re a DeFi team, RIA, family office, or business in the Pacific Northwest (or beyond) trying to get serious about onchain finance, I’d love to hear what you’re working on.  
+>  
+> Share a bit about your team and goals, and I’ll respond with next steps or a link to schedule a 30-minute discovery call.
+
+Keep the existing form, but ensure fields include:
+
+- Name  
+- Email  
+- Organization  
+- Role  
+- “Which best describes you?” (dropdown with: DeFi / crypto team, RIA / wealth firm, Family office, Fintech / enterprise, Other)  
+- Free-text: “What do you want help with?”
+
+Under the form, add a line like:
+> Prefer email? Reach out at **hello@northwestonchainhub.com** (placeholder – keep mailto link but I will set this up later).
+
+=====================
+8. FOOTER & DISCLAIMER
+=====================
+
+In the footer, include:
+
+- “© [current year] Northwest Onchain Hub. All rights reserved.”
+- Location line: “Based in Seattle, working with clients globally.”
+- A small disclaimer:
+
+> Northwest Onchain Hub provides education and consulting services only. Nothing on this site or in our engagements is individualized investment, legal, or tax advice.
+
+=====================
+IMPLEMENTATION NOTES
+=====================
+
+- Update only the necessary HTML/CSS and text to reflect the above copy and structure.
+- Preserve responsiveness so the site looks good on mobile.
+- Add comments in the main HTML file showing where each section begins (e.g., `<!-- HERO SECTION -->`, `<!-- SERVICES SECTION -->`, etc.).
