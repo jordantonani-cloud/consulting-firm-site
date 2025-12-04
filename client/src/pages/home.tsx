@@ -754,7 +754,7 @@ export default function Home() {
         <div className="container-constrained">
           <div className="flex flex-col items-center gap-6 mb-8">
              <div className="flex items-center">
-                <img src="/logo.png" alt="Northwest Onchain Hub" className="h-16 w-auto" />
+                <img src="/nw-logo.png" alt="Northwest Onchain Hub" className="h-16 w-auto brightness-0 invert" />
               </div>
               <p className="text-white/60 max-w-md mx-auto text-center">
                 Based in Seattle, working with clients globally.
