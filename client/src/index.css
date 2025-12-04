@@ -159,4 +159,17 @@
   .container-constrained {
     @apply container mx-auto px-4 md:px-6 max-w-6xl;
   }
+  .navbar-brand {
+    @apply block;
+  }
+  .navbar-logo {
+    height: 40px;
+    width: auto;
+    display: block;
+  }
+  @media (max-width: 768px) {
+    .navbar-logo {
+      height: 32px;
+    }
+  }
 }

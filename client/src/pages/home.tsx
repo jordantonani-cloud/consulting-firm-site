@@ -223,7 +223,33 @@ export default function Home() {
       >
         <div className="container-constrained flex items-center justify-between">
           <div className="flex items-center">
-            <img src="/logo.png" alt="Northwest Onchain Hub" className="h-12 w-auto" />
+            <a href="/" className="navbar-brand">
+              <svg
+                className="navbar-logo"
+                viewBox="0 0 80 80"
+                xmlns="http://www.w3.org/2000/svg"
+                aria-label="Northwest Onchain Hub logo"
+              >
+                <circle cx="40" cy="40" r="30" fill="none" stroke="#3AD0C3" strokeWidth="2.4" />
+                <path
+                  d="M18 48 L32 30 L42 38 L50 30 L62 48 Z"
+                  fill="none"
+                  stroke="#3AD0C3"
+                  strokeWidth="2.4"
+                  strokeLinejoin="round"
+                />
+                <circle cx="24" cy="52" r="3" fill="#3AD0C3" />
+                <circle cx="36" cy="48" r="3" fill="#3AD0C3" />
+                <circle cx="50" cy="54" r="3" fill="#3AD0C3" />
+                <path
+                  d="M24 52 L36 48 L50 54"
+                  fill="none"
+                  stroke="#3AD0C3"
+                  strokeWidth="1.8"
+                  strokeLinecap="round"
+                />
+              </svg>
+            </a>
           </div>
 
           {/* Desktop Nav */}
