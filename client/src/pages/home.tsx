@@ -342,16 +342,119 @@ export default function Home() {
               </motion.div>
             </motion.div>
 
-            {/* Hero Illustration - Interactive Animated Network */}
+            {/* Hero Illustration */}
             <motion.div 
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="hidden md:flex justify-center items-center"
+              className="hidden md:flex justify-center items-center hero-graphic"
             >
-              <div className="relative w-full max-w-lg aspect-square">
-                <AnimatedMountainNetwork />
-              </div>
+              <svg
+                className="hero-svg"
+                viewBox="0 0 320 220"
+                xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true"
+              >
+                <rect
+                  x="16"
+                  y="16"
+                  width="288"
+                  height="188"
+                  rx="24"
+                  fill="#050B14"
+                  stroke="#3AD0C3"
+                  strokeWidth="1.8"
+                />
+                <path
+                  d="M80 150 L120 90 L150 115 L175 92 L220 150 Z"
+                  fill="none"
+                  stroke="#3AD0C3"
+                  strokeWidth="2.2"
+                  strokeLinejoin="round"
+                />
+                <circle cx="96" cy="156" r="4" fill="#3AD0C3" />
+                <circle cx="140" cy="144" r="4" fill="#3AD0C3" />
+                <circle cx="186" cy="158" r="4" fill="#3AD0C3" />
+                <path
+                  d="M96 156 L140 144 L186 158"
+                  fill="none"
+                  stroke="#3AD0C3"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                />
+                <path
+                  d="M80 70 C130 40 200 40 248 80"
+                  fill="none"
+                  stroke="#3AD0C3"
+                  strokeWidth="1.4"
+                  strokeDasharray="4 6"
+                  strokeLinecap="round"
+                  opacity="0.8"
+                />
+                <circle cx="100" cy="60" r="3" fill="#3AD0C3" opacity="0.9" />
+                <circle cx="155" cy="50" r="3" fill="#3AD0C3" opacity="0.9" />
+                <circle cx="210" cy="62" r="3" fill="#3AD0C3" opacity="0.9" />
+                <rect
+                  x="36"
+                  y="32"
+                  width="90"
+                  height="26"
+                  rx="13"
+                  fill="#050B14"
+                  stroke="#3AD0C3"
+                  strokeWidth="1"
+                  opacity="0.9"
+                />
+                <text
+                  x="52"
+                  y="49"
+                  fill="#3AD0C3"
+                  fontSize="10"
+                  fontFamily="Space Grotesk, system-ui, sans-serif"
+                >
+                  DeFi BD
+                </text>
+                <rect
+                  x="194"
+                  y="32"
+                  width="90"
+                  height="26"
+                  rx="13"
+                  fill="#050B14"
+                  stroke="#3AD0C3"
+                  strokeWidth="1"
+                  opacity="0.9"
+                />
+                <text
+                  x="204"
+                  y="49"
+                  fill="#3AD0C3"
+                  fontSize="10"
+                  fontFamily="Space Grotesk, system-ui, sans-serif"
+                >
+                  RIAs &amp; FOs
+                </text>
+                <rect
+                  x="110"
+                  y="170"
+                  width="108"
+                  height="26"
+                  rx="13"
+                  fill="#050B14"
+                  stroke="#3AD0C3"
+                  strokeWidth="1"
+                  opacity="0.9"
+                />
+                <text
+                  x="118"
+                  y="187"
+                  fill="#3AD0C3"
+                  fontSize="10"
+                  fontFamily="Space Grotesk, system-ui, sans-serif"
+                >
+                  Web3 opportunity
+                </text>
+              </svg>
             </motion.div>
           </div>
         </div>

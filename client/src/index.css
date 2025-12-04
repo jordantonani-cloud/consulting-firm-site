@@ -172,4 +172,19 @@
       height: 32px;
     }
   }
+  .hero-graphic {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .hero-svg {
+    max-width: 100%;
+    height: auto;
+    width: 100%;
+  }
+  @media (min-width: 768px) {
+    .hero-graphic {
+      padding-left: 24px;
+    }
+  }
 }
