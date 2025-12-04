@@ -8,7 +8,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
-import profilePic from "@assets/generated_images/professional_headshot_of_a_consultant_in_a_modern_setting.png";
+import profilePic from "@assets/jordan-tonani.png";
 
 function AnimatedMountainNetwork() {
   const nodes = [

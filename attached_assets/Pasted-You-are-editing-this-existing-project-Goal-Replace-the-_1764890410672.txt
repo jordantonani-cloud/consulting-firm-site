@@ -1,0 +1,186 @@
+You are editing this existing project.
+
+Goal:
+Replace the current hero image/illustration on the RIGHT side of the hero section (the section whose text starts with “Northwest Onchain Hub helps DeFi teams…”) with a new inline SVG that fits the Northwest Onchain Hub brand. 
+
+IMPORTANT:
+- Do NOT change anything in the navbar or the top-left logo.
+- Only change the visual element to the RIGHT of the main hero text.
+
+====================
+1) FIND THE HERO IMAGE
+====================
+
+1. Locate the hero section: the one with the heading and/or text that includes the phrase:
+   "Northwest Onchain Hub helps DeFi teams"
+   (or a very similar variant of that sentence).
+
+2. Inside that hero section, identify the container that holds the image or illustration on the RIGHT side. 
+   It might have a class like `.hero-image`, `.hero-right`, `.hero-visual`, etc.
+
+3. Keep the existing left-side text/content as-is. We are only replacing the right-side visual.
+
+============================
+2) REPLACE IT WITH THIS SVG
+============================
+
+Replace the contents of the right-side visual container with this markup:
+
+<div class="hero-graphic">
+  <svg
+    class="hero-svg"
+    viewBox="0 0 320 220"
+    xmlns="http://www.w3.org/2000/svg"
+    aria-hidden="true"
+  >
+    <!-- Card background -->
+    <rect
+      x="16"
+      y="16"
+      width="288"
+      height="188"
+      rx="24"
+      fill="#050B14"
+      stroke="#3AD0C3"
+      stroke-width="1.8"
+    />
+
+    <!-- Mountain / PNW peak -->
+    <path
+      d="M80 150 L120 90 L150 115 L175 92 L220 150 Z"
+      fill="none"
+      stroke="#3AD0C3"
+      stroke-width="2.2"
+      stroke-linejoin="round"
+    />
+
+    <!-- Onchain nodes -->
+    <circle cx="96" cy="156" r="4" fill="#3AD0C3" />
+    <circle cx="140" cy="144" r="4" fill="#3AD0C3" />
+    <circle cx="186" cy="158" r="4" fill="#3AD0C3" />
+
+    <!-- Connections -->
+    <path
+      d="M96 156 L140 144 L186 158"
+      fill="none"
+      stroke="#3AD0C3"
+      stroke-width="2"
+      stroke-linecap="round"
+    />
+
+    <!-- Outer orbit / network arc -->
+    <path
+      d="M80 70 C130 40 200 40 248 80"
+      fill="none"
+      stroke="#3AD0C3"
+      stroke-width="1.4"
+      stroke-dasharray="4 6"
+      stroke-linecap="round"
+      opacity="0.8"
+    />
+
+    <!-- Hub nodes on the arc -->
+    <circle cx="100" cy="60" r="3" fill="#3AD0C3" opacity="0.9" />
+    <circle cx="155" cy="50" r="3" fill="#3AD0C3" opacity="0.9" />
+    <circle cx="210" cy="62" r="3" fill="#3AD0C3" opacity="0.9" />
+
+    <!-- Small tag cards (abstract “services” chips) -->
+    <rect
+      x="36"
+      y="32"
+      width="90"
+      height="26"
+      rx="13"
+      fill="#050B14"
+      stroke="#3AD0C3"
+      stroke-width="1"
+      opacity="0.9"
+    />
+    <text
+      x="52"
+      y="49"
+      fill="#3AD0C3"
+      font-size="10"
+      font-family="Space Grotesk, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"
+    >
+      DeFi BD
+    </text>
+
+    <rect
+      x="194"
+      y="32"
+      width="90"
+      height="26"
+      rx="13"
+      fill="#050B14"
+      stroke="#3AD0C3"
+      stroke-width="1"
+      opacity="0.9"
+    />
+    <text
+      x="204"
+      y="49"
+      fill="#3AD0C3"
+      font-size="10"
+      font-family="Space Grotesk, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"
+    >
+      RIAs &amp; FOs
+    </text>
+
+    <rect
+      x="110"
+      y="170"
+      width="108"
+      height="26"
+      rx="13"
+      fill="#050B14"
+      stroke="#3AD0C3"
+      stroke-width="1"
+      opacity="0.9"
+    />
+    <text
+      x="118"
+      y="187"
+      fill="#3AD0C3"
+      font-size="10"
+      font-family="Space Grotesk, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"
+    >
+      Web3 opportunity
+    </text>
+  </svg>
+</div>
+
+=======================
+3) ADD / UPDATE CSS
+=======================
+
+In the main CSS file, add or adjust rules to make this graphic size and align nicely.
+
+Example (adapt to your existing class names but keep the intent):
+
+.hero-graphic {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-svg {
+  max-width: 100%;
+  height: auto;
+}
+
+/* If the hero uses a grid or flex with left text / right visual, 
+   ensure the right side doesn’t shrink too small on desktop */
+@media (min-width: 768px) {
+  .hero-graphic {
+    padding-left: 24px;
+  }
+}
+
+=======================
+4) FINAL CHECK
+=======================
+
+- Make sure the navbar logo is unchanged.
+- Confirm that in the hero, the LEFT side still shows the heading and text that starts with “Northwest Onchain Hub helps DeFi teams…” and the RIGHT side now displays this new abstract SVG.
+- Ensure the hero still looks good on both desktop and mobile (the SVG should scale down gracefully).
