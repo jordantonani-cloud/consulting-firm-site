@@ -9,7 +9,127 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
 import profilePic from "@assets/generated_images/professional_headshot_of_a_consultant_in_a_modern_setting.png";
-import heroIllustration from "@assets/generated_images/minimalist_abstract_mountain_and_network_illustration_for_hero_section.png";
+
+function AnimatedMountainNetwork() {
+  const nodes = [
+    { id: 1, cx: 200, cy: 80, delay: 0 },
+    { id: 2, cx: 120, cy: 180, delay: 0.2 },
+    { id: 3, cx: 280, cy: 180, delay: 0.4 },
+    { id: 4, cx: 80, cy: 280, delay: 0.6 },
+    { id: 5, cx: 200, cy: 250, delay: 0.8 },
+    { id: 6, cx: 320, cy: 280, delay: 1.0 },
+    { id: 7, cx: 160, cy: 320, delay: 1.2 },
+    { id: 8, cx: 240, cy: 340, delay: 1.4 },
+  ];
+
+  const connections = [
+    { from: 1, to: 2 }, { from: 1, to: 3 },
+    { from: 2, to: 4 }, { from: 2, to: 5 },
+    { from: 3, to: 5 }, { from: 3, to: 6 },
+    { from: 4, to: 7 }, { from: 5, to: 7 },
+    { from: 5, to: 8 }, { from: 6, to: 8 },
+  ];
+
+  return (
+    <svg viewBox="0 0 400 400" className="w-full h-full">
+      <defs>
+        <linearGradient id="mountainGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" stopColor="#3AD0C3" stopOpacity="0.8" />
+          <stop offset="100%" stopColor="#3AD0C3" stopOpacity="0.2" />
+        </linearGradient>
+        <filter id="glow">
+          <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+          <feMerge>
+            <feMergeNode in="coloredBlur"/>
+            <feMergeNode in="SourceGraphic"/>
+          </feMerge>
+        </filter>
+      </defs>
+
+      {connections.map((conn, i) => {
+        const fromNode = nodes.find(n => n.id === conn.from)!;
+        const toNode = nodes.find(n => n.id === conn.to)!;
+        return (
+          <motion.line
+            key={i}
+            x1={fromNode.cx}
+            y1={fromNode.cy}
+            x2={toNode.cx}
+            y2={toNode.cy}
+            stroke="#3AD0C3"
+            strokeWidth="1.5"
+            strokeOpacity="0.4"
+            initial={{ pathLength: 0, opacity: 0 }}
+            animate={{ pathLength: 1, opacity: 1 }}
+            transition={{ duration: 1.5, delay: 0.5 + i * 0.1 }}
+          />
+        );
+      })}
+
+      <motion.path
+        d="M 50 350 L 150 180 L 200 250 L 280 120 L 350 350 Z"
+        fill="none"
+        stroke="url(#mountainGradient)"
+        strokeWidth="2"
+        initial={{ pathLength: 0, opacity: 0 }}
+        animate={{ pathLength: 1, opacity: 1 }}
+        transition={{ duration: 2, ease: "easeInOut" }}
+      />
+
+      <motion.path
+        d="M 100 350 L 180 220 L 220 270 L 300 160 L 380 350"
+        fill="none"
+        stroke="#3AD0C3"
+        strokeWidth="1"
+        strokeOpacity="0.3"
+        initial={{ pathLength: 0 }}
+        animate={{ pathLength: 1 }}
+        transition={{ duration: 2.5, delay: 0.3, ease: "easeInOut" }}
+      />
+
+      {nodes.map((node) => (
+        <motion.g key={node.id} filter="url(#glow)">
+          <motion.circle
+            cx={node.cx}
+            cy={node.cy}
+            r="6"
+            fill="#050B14"
+            stroke="#3AD0C3"
+            strokeWidth="2"
+            initial={{ scale: 0, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ duration: 0.5, delay: node.delay }}
+          />
+          <motion.circle
+            cx={node.cx}
+            cy={node.cy}
+            r="3"
+            fill="#3AD0C3"
+            initial={{ scale: 0 }}
+            animate={{ scale: [1, 1.5, 1] }}
+            transition={{ 
+              duration: 2, 
+              delay: node.delay + 1,
+              repeat: Infinity,
+              repeatDelay: 3
+            }}
+          />
+        </motion.g>
+      ))}
+
+      <motion.circle
+        cx="200"
+        cy="80"
+        r="10"
+        fill="#3AD0C3"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: [0.3, 0.8, 0.3] }}
+        transition={{ duration: 3, repeat: Infinity }}
+        filter="url(#glow)"
+      />
+    </svg>
+  );
+}
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 20 },
@@ -103,7 +223,7 @@ export default function Home() {
       >
         <div className="container-constrained flex items-center justify-between">
           <div className="flex items-center">
-            <img src="/logo.jpg" alt="Northwest Onchain Hub" className="h-12 w-auto" />
+            <img src="/logo.png" alt="Northwest Onchain Hub" className="h-12 w-auto" />
           </div>
 
           {/* Desktop Nav */}
@@ -196,19 +316,15 @@ export default function Home() {
               </motion.div>
             </motion.div>
 
-            {/* Hero Illustration */}
+            {/* Hero Illustration - Interactive Animated Network */}
             <motion.div 
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="hidden md:flex justify-center"
+              className="hidden md:flex justify-center items-center"
             >
-              <div className="relative w-full max-w-md aspect-square bg-white/5 rounded-full flex items-center justify-center backdrop-blur-sm border border-white/10 p-12">
-                 <img 
-                   src={heroIllustration} 
-                   alt="Northwest Onchain Hub Illustration" 
-                   className="w-full h-auto opacity-90 drop-shadow-[0_0_30px_rgba(58,208,195,0.3)]"
-                 />
+              <div className="relative w-full max-w-lg aspect-square">
+                <AnimatedMountainNetwork />
               </div>
             </motion.div>
           </div>
@@ -632,7 +748,7 @@ export default function Home() {
         <div className="container-constrained">
           <div className="flex flex-col items-center gap-6 mb-8">
              <div className="flex items-center">
-                <img src="/logo.jpg" alt="Northwest Onchain Hub" className="h-16 w-auto" />
+                <img src="/logo.png" alt="Northwest Onchain Hub" className="h-16 w-auto" />
               </div>
               <p className="text-white/60 max-w-md mx-auto text-center">
                 Based in Seattle, working with clients globally.
