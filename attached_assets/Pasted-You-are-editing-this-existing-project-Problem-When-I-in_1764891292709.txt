@@ -1,0 +1,55 @@
+You are editing this existing project.
+
+Problem:
+When I increase the logo size in the top-left, the entire nav bar becomes very tall and overlaps the hero section. I want the logo to be a reasonable size but the nav bar height to stay compact, and the hero content should not be covered.
+
+Please do the following:
+
+1. Find the CSS rules for the main header / nav bar and logo image.
+   Classes are likely something like: header, .navbar, .navbar-inner, .navbar-brand, .navbar-logo, etc.
+
+2. Make the nav bar a fixed, compact height with centered content. Implement styles like this (adapt to the actual selector names):
+
+   /* Root nav/header container */
+   header,
+   .navbar {
+     height: 72px;              /* compact bar */
+     padding: 0 32px;           /* horizontal padding only */
+     display: flex;
+     align-items: center;       /* vertically center everything */
+     justify-content: center;   /* or space-between if needed */
+   }
+
+   /* Inner container if there is one */
+   .navbar-inner {
+     max-width: 1100px;
+     width: 100%;
+     margin: 0 auto;
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+   }
+
+   /* Logo image/SVG */
+   .navbar-logo {
+     max-height: 40px;          /* keep logo around 32–40px high */
+     height: auto;
+     width: auto;
+     display: block;
+   }
+
+   Make sure you REMOVE any big padding-top / padding-bottom or large min-height values on the nav/header or its inner container that would make the bar taller than necessary.
+
+3. If the header/nav is positioned as fixed or sticky at the top (e.g. `position: fixed; top: 0;`), ensure the content below is pushed down so it is not hidden behind the nav.
+
+   Add padding-top to the main content wrapper (whichever element wraps the hero section, e.g. main or .hero-wrapper):
+
+   main,
+   .hero-wrapper {
+     padding-top: 80px;   /* roughly equal to the nav height */
+   }
+
+4. Confirm on desktop and mobile that:
+   - The logo appears around 32–40px high.
+   - The nav bar height looks normal (not covering a big chunk of the screen).
+   - The hero heading “serious capital in the Pacific Northwest” is fully visible and not covered by the nav.
