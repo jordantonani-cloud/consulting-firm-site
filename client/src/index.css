@@ -163,13 +163,13 @@
     @apply block;
   }
   .navbar-logo {
-    height: 48px;
+    height: 80px;
     width: auto;
     display: block;
   }
   @media (max-width: 768px) {
     .navbar-logo {
-      height: 36px;
+      height: 56px;
     }
   }
 }
