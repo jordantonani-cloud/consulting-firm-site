@@ -226,7 +226,7 @@ export default function Home() {
             <a href="/" className="navbar-brand">
               <img 
                 src="/nw-logo.png" 
-                alt="Northwest Onchain Hub" 
+                alt="Northwest Onchain" 
                 className={`navbar-logo transition-all duration-300 ${isScrolled ? '' : 'brightness-0 invert'}`}
               />
             </a>
@@ -296,7 +296,7 @@ export default function Home() {
               </motion.h1>
               
               <motion.p variants={fadeInUp} className="text-white/80 mb-8 text-lg md:text-xl leading-relaxed">
-                Northwest Onchain Hub helps DeFi teams, RIAs, family offices, and forward-looking businesses turn onchain finance into real clients, partners, and defensible strategy.
+                Northwest Onchain helps DeFi teams, RIAs, family offices, and forward-looking businesses turn onchain finance into real clients, partners, and defensible strategy.
               </motion.p>
 
               <motion.div variants={fadeInUp} className="flex flex-wrap gap-3 mb-10">
@@ -341,7 +341,7 @@ export default function Home() {
       <section id="about" className="section-spacing bg-background">
         <div className="container-constrained">
           <div className="max-w-3xl mx-auto text-center mb-16">
-            <h2 className="mb-4">About Northwest Onchain Hub</h2>
+            <h2 className="mb-4">About Northwest Onchain</h2>
             <p className="text-primary text-lg font-medium">A bridge between Wall Street, DeFi, and the Pacific Northwest</p>
           </div>
 
@@ -356,7 +356,7 @@ export default function Home() {
                <div className="absolute -inset-4 bg-muted/30 rounded-2xl -rotate-2 -z-10"></div>
                <img 
                   src={profilePic} 
-                  alt="Photo of Jordan Tonani, founder of Northwest Onchain Hub" 
+                  alt="Photo of Jordan Tonani, founder of Northwest Onchain" 
                   className="w-full h-auto rounded-xl shadow-lg object-cover aspect-[4/5]"
                 />
             </motion.div>
@@ -370,7 +370,7 @@ export default function Home() {
             >
               <div className="space-y-5 text-muted-foreground text-lg leading-relaxed mb-10">
                 <p>
-                  I'm Jordan Tonani, the founder of Northwest Onchain Hub.
+                  I'm Jordan Tonani, the founder of Northwest Onchain.
                 </p>
                 <p>
                   I started my career as a financial advisor at Morgan Stanley, then moved full-time into crypto and DeFi business development. I've worked with onchain lending platforms, structured products, and trading firms, and I'm deeply plugged into EVM-native DeFi, market makers, and the broader crypto ecosystem.
@@ -754,7 +754,7 @@ export default function Home() {
         <div className="container-constrained">
           <div className="flex flex-col items-center gap-6 mb-8">
              <div className="flex items-center">
-                <img src="/nw-logo.png" alt="Northwest Onchain Hub" className="h-16 w-auto brightness-0 invert" />
+                <img src="/nw-logo.png" alt="Northwest Onchain" className="h-16 w-auto brightness-0 invert" />
               </div>
               <p className="text-white/60 max-w-md mx-auto text-center">
                 Based in Seattle, working with clients globally.
@@ -766,9 +766,9 @@ export default function Home() {
             </Button>
           </div>
           <div className="border-t border-white/10 pt-8 text-center">
-            <p className="text-sm text-white/40 mb-4">© {new Date().getFullYear()} Northwest Onchain Hub. All rights reserved.</p>
+            <p className="text-sm text-white/40 mb-4">© {new Date().getFullYear()} Northwest Onchain. All rights reserved.</p>
             <p className="text-xs text-white/30 max-w-2xl mx-auto leading-relaxed">
-              Northwest Onchain Hub provides education and consulting services only. Nothing on this site or in our engagements is individualized investment, legal, or tax advice.
+              Northwest Onchain provides education and consulting services only. Nothing on this site or in our engagements is individualized investment, legal, or tax advice.
             </p>
           </div>
         </div>
