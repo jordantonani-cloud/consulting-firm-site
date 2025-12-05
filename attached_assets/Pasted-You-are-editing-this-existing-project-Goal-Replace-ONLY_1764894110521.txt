@@ -1,0 +1,126 @@
+You are editing this existing project.
+
+Goal:
+Replace ONLY the hero image on the RIGHT side of the hero section (the one whose text starts with “Northwest Onchain Hub helps DeFi teams, RIAs, family offices, and forward-looking businesses…”) with a new inline SVG illustration.
+
+Important:
+- Do NOT touch the navbar or the logo.
+- Do NOT change the left-side hero text or buttons.
+- Only replace the visual/illustration on the right.
+
+=====================
+1) FIND THE HERO IMAGE
+=====================
+
+1. Locate the hero section that contains the text:
+   "Northwest Onchain Hub helps DeFi teams, RIAs, family offices, and forward-looking businesses turn onchain finance into real clients, partners, and defensible strategy."
+
+2. Inside this section, find the container that holds the current image or SVG on the RIGHT side (it may have a class like .hero-image, .hero-graphic, .hero-right, etc.)
+
+3. Keep the container element, but remove the existing <img> or <svg> inside it. We will replace it with a new SVG.
+
+================================
+2) INSERT THIS NEW INLINE SVG
+================================
+
+Replace the contents of the right-side hero visual container with exactly this:
+
+<div class="hero-graphic">
+  <svg
+    class="hero-svg"
+    viewBox="0 0 360 240"
+    xmlns="http://www.w3.org/2000/svg"
+    aria-hidden="true"
+  >
+    <!-- Background card -->
+    <rect
+      x="24"
+      y="24"
+      width="312"
+      height="192"
+      rx="32"
+      fill="#050B14"
+      stroke="#3AD0C3"
+      stroke-width="1.4"
+    />
+
+    <!-- Grid lines -->
+    <path
+      d="M60 90 H300 M60 130 H300 M60 170 H300"
+      stroke="#3AD0C3"
+      stroke-width="0.8"
+      opacity="0.15"
+    />
+
+    <!-- Line 1 -->
+    <path
+      d="M60 160 L110 120 L150 135 L190 90 L240 105 L300 70"
+      fill="none"
+      stroke="#3AD0C3"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      opacity="0.9"
+    />
+
+    <!-- Line 2 (shadow) -->
+    <path
+      d="M60 175 L110 140 L150 150 L190 110 L240 120 L300 95"
+      fill="none"
+      stroke="#3AD0C3"
+      stroke-width="1.2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      opacity="0.45"
+    />
+
+    <!-- Nodes -->
+    <circle cx="60" cy="160" r="4" fill="#3AD0C3" />
+    <circle cx="110" cy="120" r="4" fill="#3AD0C3" />
+    <circle cx="150" cy="135" r="4" fill="#3AD0C3" />
+    <circle cx="190" cy="90" r="4" fill="#3AD0C3" />
+    <circle cx="240" cy="105" r="4" fill="#3AD0C3" />
+    <circle cx="300" cy="70" r="4" fill="#3AD0C3" />
+
+    <!-- Small caption -->
+    <text
+      x="40"
+      y="60"
+      fill="#E5F7F5"
+      font-size="10"
+      font-family="Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"
+      opacity="0.8"
+    >
+      Onchain signals, clarified.
+    </text>
+  </svg>
+</div>
+
+=====================
+3) CSS ADJUSTMENTS
+=====================
+
+In the main CSS file:
+
+1. Ensure there are styles similar to the following (add or update as needed):
+
+.hero-graphic {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-svg {
+  max-width: 100%;
+  height: auto;
+}
+
+2. Make sure the hero layout still places text on the LEFT and this SVG on the RIGHT on desktop, and stacks them nicely on mobile (no need to rebuild the layout, just keep the existing flex/grid behavior).
+
+=====================
+4) FINAL CHECK
+=====================
+
+- The hero text and buttons on the left remain unchanged.
+- The navbar and logo are unchanged.
+- On the right side of the hero, the old image is gone and the new abstract “signal graph” SVG is displayed, scaling nicely on desktop and mobile.

@@ -172,4 +172,15 @@
       height: 32px;
     }
   }
+  .hero-graphic {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 480px;
+  }
+  .hero-svg {
+    max-width: 100%;
+    height: auto;
+  }
 }

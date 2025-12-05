@@ -322,15 +322,74 @@ export default function Home() {
               </motion.div>
             </motion.div>
 
-            {/* Hero Illustration - Interactive Animated Network */}
+            {/* Hero Illustration - Signal Graph */}
             <motion.div 
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
               className="hidden md:flex justify-center items-center"
             >
-              <div className="relative w-full max-w-lg aspect-square">
-                <AnimatedMountainNetwork />
+              <div className="hero-graphic">
+                <svg
+                  className="hero-svg"
+                  viewBox="0 0 360 240"
+                  xmlns="http://www.w3.org/2000/svg"
+                  aria-hidden="true"
+                >
+                  <rect
+                    x="24"
+                    y="24"
+                    width="312"
+                    height="192"
+                    rx="32"
+                    fill="#050B14"
+                    stroke="#3AD0C3"
+                    strokeWidth="1.4"
+                  />
+                  <path
+                    d="M60 90 H300 M60 130 H300 M60 170 H300"
+                    stroke="#3AD0C3"
+                    strokeWidth="0.8"
+                    opacity="0.15"
+                  />
+                  <motion.path
+                    d="M60 160 L110 120 L150 135 L190 90 L240 105 L300 70"
+                    fill="none"
+                    stroke="#3AD0C3"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    opacity="0.9"
+                    initial={{ pathLength: 0 }}
+                    animate={{ pathLength: 1 }}
+                    transition={{ duration: 2, ease: "easeInOut" }}
+                  />
+                  <path
+                    d="M60 175 L110 140 L150 150 L190 110 L240 120 L300 95"
+                    fill="none"
+                    stroke="#3AD0C3"
+                    strokeWidth="1.2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    opacity="0.45"
+                  />
+                  <motion.circle cx="60" cy="160" r="4" fill="#3AD0C3" initial={{ scale: 0 }} animate={{ scale: 1 }} transition={{ delay: 0.3 }} />
+                  <motion.circle cx="110" cy="120" r="4" fill="#3AD0C3" initial={{ scale: 0 }} animate={{ scale: 1 }} transition={{ delay: 0.5 }} />
+                  <motion.circle cx="150" cy="135" r="4" fill="#3AD0C3" initial={{ scale: 0 }} animate={{ scale: 1 }} transition={{ delay: 0.7 }} />
+                  <motion.circle cx="190" cy="90" r="4" fill="#3AD0C3" initial={{ scale: 0 }} animate={{ scale: 1 }} transition={{ delay: 0.9 }} />
+                  <motion.circle cx="240" cy="105" r="4" fill="#3AD0C3" initial={{ scale: 0 }} animate={{ scale: 1 }} transition={{ delay: 1.1 }} />
+                  <motion.circle cx="300" cy="70" r="4" fill="#3AD0C3" initial={{ scale: 0 }} animate={{ scale: 1 }} transition={{ delay: 1.3 }} />
+                  <text
+                    x="40"
+                    y="60"
+                    fill="#E5F7F5"
+                    fontSize="10"
+                    fontFamily="Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"
+                    opacity="0.8"
+                  >
+                    Onchain signals, clarified.
+                  </text>
+                </svg>
               </div>
             </motion.div>
           </div>
