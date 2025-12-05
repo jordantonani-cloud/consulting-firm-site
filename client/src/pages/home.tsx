@@ -595,7 +595,7 @@ export default function Home() {
                 </CardHeader>
                 <CardContent className="px-8 pb-8 flex-grow flex flex-col">
                   <p className="text-muted-foreground text-sm mb-6 leading-relaxed">
-                    A 4-week lab-style engagement to identify where (if anywhere) web3 and onchain finance actually make sense for your business. We explore concrete use cases—tokenization, onchain settlement, loyalty, data—and pressure-test them for business value, feasibility, and regulatory sanity.
+                    A 4-week lab-style engagement to identify where (if anywhere) web3 and onchain finance actually make sense for your business. We explore concrete use cases—tokenization, stablecoin settlement, loyalty, data—and pressure-test them for business value, feasibility, and regulatory sanity.
                   </p>
                   
                   <p className="text-sm font-semibold text-foreground mb-3">You'll leave with:</p>
