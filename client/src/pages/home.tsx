@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { ArrowRight, Check, Menu, X, ExternalLink, Network, Shield, MessageSquare, Target, Users, Building2, Briefcase, Rocket, GraduationCap, Lightbulb, Mail } from "lucide-react";
+import { ArrowRight, Check, Menu, X, Shield, MessageSquare, Target, Users, Building2, Briefcase, Rocket, GraduationCap, Lightbulb, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -9,127 +9,6 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
 import profilePic from "@assets/jordan-tonani.png";
-
-function AnimatedMountainNetwork() {
-  const nodes = [
-    { id: 1, cx: 200, cy: 80, delay: 0 },
-    { id: 2, cx: 120, cy: 180, delay: 0.2 },
-    { id: 3, cx: 280, cy: 180, delay: 0.4 },
-    { id: 4, cx: 80, cy: 280, delay: 0.6 },
-    { id: 5, cx: 200, cy: 250, delay: 0.8 },
-    { id: 6, cx: 320, cy: 280, delay: 1.0 },
-    { id: 7, cx: 160, cy: 320, delay: 1.2 },
-    { id: 8, cx: 240, cy: 340, delay: 1.4 },
-  ];
-
-  const connections = [
-    { from: 1, to: 2 }, { from: 1, to: 3 },
-    { from: 2, to: 4 }, { from: 2, to: 5 },
-    { from: 3, to: 5 }, { from: 3, to: 6 },
-    { from: 4, to: 7 }, { from: 5, to: 7 },
-    { from: 5, to: 8 }, { from: 6, to: 8 },
-  ];
-
-  return (
-    <svg viewBox="0 0 400 400" className="w-full h-full">
-      <defs>
-        <linearGradient id="mountainGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-          <stop offset="0%" stopColor="#3AD0C3" stopOpacity="0.8" />
-          <stop offset="100%" stopColor="#3AD0C3" stopOpacity="0.2" />
-        </linearGradient>
-        <filter id="glow">
-          <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
-          <feMerge>
-            <feMergeNode in="coloredBlur"/>
-            <feMergeNode in="SourceGraphic"/>
-          </feMerge>
-        </filter>
-      </defs>
-
-      {connections.map((conn, i) => {
-        const fromNode = nodes.find(n => n.id === conn.from)!;
-        const toNode = nodes.find(n => n.id === conn.to)!;
-        return (
-          <motion.line
-            key={i}
-            x1={fromNode.cx}
-            y1={fromNode.cy}
-            x2={toNode.cx}
-            y2={toNode.cy}
-            stroke="#3AD0C3"
-            strokeWidth="1.5"
-            strokeOpacity="0.4"
-            initial={{ pathLength: 0, opacity: 0 }}
-            animate={{ pathLength: 1, opacity: 1 }}
-            transition={{ duration: 1.5, delay: 0.5 + i * 0.1 }}
-          />
-        );
-      })}
-
-      <motion.path
-        d="M 50 350 L 150 180 L 200 250 L 280 120 L 350 350 Z"
-        fill="none"
-        stroke="url(#mountainGradient)"
-        strokeWidth="2"
-        initial={{ pathLength: 0, opacity: 0 }}
-        animate={{ pathLength: 1, opacity: 1 }}
-        transition={{ duration: 2, ease: "easeInOut" }}
-      />
-
-      <motion.path
-        d="M 100 350 L 180 220 L 220 270 L 300 160 L 380 350"
-        fill="none"
-        stroke="#3AD0C3"
-        strokeWidth="1"
-        strokeOpacity="0.3"
-        initial={{ pathLength: 0 }}
-        animate={{ pathLength: 1 }}
-        transition={{ duration: 2.5, delay: 0.3, ease: "easeInOut" }}
-      />
-
-      {nodes.map((node) => (
-        <motion.g key={node.id} filter="url(#glow)">
-          <motion.circle
-            cx={node.cx}
-            cy={node.cy}
-            r="6"
-            fill="#050B14"
-            stroke="#3AD0C3"
-            strokeWidth="2"
-            initial={{ scale: 0, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            transition={{ duration: 0.5, delay: node.delay }}
-          />
-          <motion.circle
-            cx={node.cx}
-            cy={node.cy}
-            r="3"
-            fill="#3AD0C3"
-            initial={{ scale: 0 }}
-            animate={{ scale: [1, 1.5, 1] }}
-            transition={{ 
-              duration: 2, 
-              delay: node.delay + 1,
-              repeat: Infinity,
-              repeatDelay: 3
-            }}
-          />
-        </motion.g>
-      ))}
-
-      <motion.circle
-        cx="200"
-        cy="80"
-        r="10"
-        fill="#3AD0C3"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: [0.3, 0.8, 0.3] }}
-        transition={{ duration: 3, repeat: Infinity }}
-        filter="url(#glow)"
-      />
-    </svg>
-  );
-}
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 20 },
@@ -140,9 +19,7 @@ const staggerContainer = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
-    transition: {
-      staggerChildren: 0.1
-    }
+    transition: { staggerChildren: 0.1 }
   }
 };
 
@@ -152,24 +29,19 @@ export default function Home() {
   const { toast } = useToast();
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
+    const handleScroll = () => setIsScrolled(window.scrollY > 50);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
+    if (element) element.scrollIntoView({ behavior: "smooth" });
     setIsMobileMenuOpen(false);
   };
 
   const handleContactSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    
     const formData = new FormData(e.currentTarget);
     const data = {
       name: formData.get('name') as string,
@@ -179,216 +51,102 @@ export default function Home() {
       type: formData.get('type') as string,
       message: formData.get('message') as string,
     };
-
     try {
       const response = await fetch('/api/contact', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data),
       });
-
       const result = await response.json();
-
       if (response.ok) {
-        toast({
-          title: "Message sent!",
-          description: result.message,
-        });
+        toast({ title: "Message sent!", description: result.message });
         e.currentTarget.reset();
       } else {
-        toast({
-          title: "Error",
-          description: result.message || "Failed to send message. Please try again.",
-          variant: "destructive",
-        });
+        toast({ title: "Error", description: result.message || "Failed to send message. Please try again.", variant: "destructive" });
       }
     } catch (error) {
-      toast({
-        title: "Error",
-        description: "Failed to send message. Please check your connection and try again.",
-        variant: "destructive",
-      });
+      toast({ title: "Error", description: "Failed to send message. Please check your connection and try again.", variant: "destructive" });
     }
   };
 
   return (
     <div className="min-h-screen bg-background text-foreground selection:bg-primary/30 font-sans">
       {/* NAVIGATION */}
-      <nav 
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          isScrolled ? "bg-background/95 backdrop-blur-md border-b border-border py-3 shadow-sm" : "bg-[#050B14] py-6 border-b border-white/10"
-        }`}
-      >
+      <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? "bg-background/95 backdrop-blur-md border-b border-border py-3 shadow-sm" : "bg-[#050B14] py-5 border-b border-white/10"}`}>
         <div className="container-constrained flex items-center justify-between">
           <div className="flex items-center">
             <a href="/" className="navbar-brand">
-              <img 
-                src="/nw-logo.png" 
-                alt="Northwest Onchain" 
-                className={`navbar-logo transition-all duration-300 ${isScrolled ? '' : 'brightness-0 invert'}`}
-              />
+              <img src="/nw-logo.png" alt="Northwest Onchain" className={`navbar-logo transition-all duration-300 ${isScrolled ? '' : 'brightness-0 invert'}`} />
             </a>
           </div>
-
-          {/* Desktop Nav */}
           <div className="hidden md:flex items-center gap-8">
-            {["About", "Services", "Who I Work With", "Process", "Contact"].map((item) => (
-              <button 
-                key={item}
-                onClick={() => scrollToSection(item.toLowerCase().replace(/\s+/g, '-'))}
-                className={`text-sm font-medium hover:text-primary transition-colors ${isScrolled ? 'text-muted-foreground' : 'text-white/80 hover:text-white'}`}
-              >
+            {["About", "Services", "Process", "Contact"].map((item) => (
+              <button key={item} onClick={() => scrollToSection(item.toLowerCase())} className={`text-sm font-medium hover:text-primary transition-colors ${isScrolled ? 'text-muted-foreground' : 'text-white/80 hover:text-white'}`}>
                 {item}
               </button>
             ))}
             <Button onClick={() => scrollToSection('contact')} className="btn-primary h-auto text-sm">
-              Book a 30-minute discovery call
+              Book a discovery call
             </Button>
           </div>
-
-          {/* Mobile Menu Toggle */}
           <div className="md:hidden">
             <button onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} className={`p-2 ${isScrolled ? 'text-foreground' : 'text-white'}`}>
               {isMobileMenuOpen ? <X /> : <Menu />}
             </button>
           </div>
         </div>
-
-        {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <motion.div 
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            className="md:hidden bg-background border-b border-border px-4 py-4 shadow-lg"
-          >
+          <motion.div initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: "auto" }} className="md:hidden bg-background border-b border-border px-4 py-4 shadow-lg">
             <div className="flex flex-col gap-4">
-              {["About", "Services", "Who I Work With", "Process", "Contact"].map((item) => (
-                <button 
-                  key={item}
-                  onClick={() => scrollToSection(item.toLowerCase().replace(/\s+/g, '-'))}
-                  className="text-left text-sm font-medium text-foreground hover:text-primary py-2"
-                >
-                  {item}
-                </button>
+              {["About", "Services", "Process", "Contact"].map((item) => (
+                <button key={item} onClick={() => scrollToSection(item.toLowerCase())} className="text-left text-sm font-medium text-foreground hover:text-primary py-2">{item}</button>
               ))}
-              <Button onClick={() => scrollToSection('contact')} className="w-full btn-primary">
-                Book a 30-minute discovery call
-              </Button>
+              <Button onClick={() => scrollToSection('contact')} className="w-full btn-primary">Book a discovery call</Button>
             </div>
           </motion.div>
         )}
       </nav>
 
       {/* HERO SECTION */}
-      <section className="relative pt-32 pb-20 md:pt-48 md:pb-32 overflow-hidden bg-[#050B14] text-white">
+      <section className="relative pt-32 pb-16 md:pt-44 md:pb-24 overflow-hidden bg-[#050B14] text-white">
         <div className="container-constrained relative z-10">
           <div className="grid md:grid-cols-2 gap-12 items-center">
-            <motion.div 
-              initial="hidden"
-              animate="visible"
-              variants={staggerContainer}
-              className="max-w-2xl"
-            >
-              <motion.h1 variants={fadeInUp} className="mb-6 text-white text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
+            <motion.div initial="hidden" animate="visible" variants={staggerContainer} className="max-w-xl">
+              <motion.h1 variants={fadeInUp} className="mb-6 text-white text-4xl md:text-5xl lg:text-[3.5rem] font-bold leading-[1.1]">
                 Bridging DeFi and serious capital in the Pacific Northwest
               </motion.h1>
-              
-              <motion.p variants={fadeInUp} className="text-white/80 mb-8 text-lg md:text-xl leading-relaxed">
-                Northwest Onchain helps DeFi teams, RIAs, family offices, and forward-looking businesses turn onchain finance into real clients, partners, and defensible strategy.
+              <motion.p variants={fadeInUp} className="text-white/70 mb-8 text-lg leading-relaxed">
+                Onchain BD, crypto education, and web3 strategy for teams that want real outcomes — not hype.
               </motion.p>
-
-              <motion.div variants={fadeInUp} className="flex flex-wrap gap-3 mb-10">
-                <span className="px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium border border-primary/20">
-                  Onchain BD for DeFi & crypto teams
-                </span>
-                <span className="px-4 py-2 rounded-full bg-white/5 text-white/80 text-sm font-medium border border-white/10">
-                  Crypto strategy & education for RIAs & family offices
-                </span>
-                <span className="px-4 py-2 rounded-full bg-white/5 text-white/80 text-sm font-medium border border-white/10">
-                  Web3 opportunity mapping for fintechs & enterprises
-                </span>
+              <motion.div variants={fadeInUp} className="flex flex-wrap gap-2 mb-10">
+                {["DeFi BD", "RIA Education", "Enterprise Strategy"].map((tag, i) => (
+                  <span key={i} className={`px-4 py-1.5 rounded-full text-sm font-medium border ${i === 0 ? 'bg-primary/10 text-primary border-primary/20' : 'bg-white/5 text-white/70 border-white/10'}`}>{tag}</span>
+                ))}
               </motion.div>
-              
-              <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row gap-4">
+              <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row gap-3">
                 <Button onClick={() => scrollToSection('contact')} className="btn-primary text-base">
-                  Book a 30-minute discovery call
-                  <ArrowRight className="ml-2 h-4 w-4" />
+                  Book a discovery call <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
-                <Button variant="outline" className="bg-transparent border-white/20 text-white hover:bg-white/10 rounded-full px-6 py-3 h-auto">
+                <Button variant="outline" className="bg-transparent border-white/20 text-white hover:bg-white/10 rounded-full px-6 py-3 h-auto text-sm">
                   Download services overview
                 </Button>
               </motion.div>
             </motion.div>
 
-            {/* Hero Illustration - Signal Graph */}
-            <motion.div 
-              initial={{ opacity: 0, x: 20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="hidden md:flex justify-center items-center"
-            >
+            <motion.div initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8, delay: 0.2 }} className="hidden md:flex justify-center items-center">
               <div className="hero-graphic">
-                <svg
-                  className="hero-svg"
-                  viewBox="0 0 360 240"
-                  xmlns="http://www.w3.org/2000/svg"
-                  aria-hidden="true"
-                >
-                  <rect
-                    x="24"
-                    y="24"
-                    width="312"
-                    height="192"
-                    rx="32"
-                    fill="#050B14"
-                    stroke="#3AD0C3"
-                    strokeWidth="1.4"
-                  />
-                  <path
-                    d="M60 90 H300 M60 130 H300 M60 170 H300"
-                    stroke="#3AD0C3"
-                    strokeWidth="0.8"
-                    opacity="0.15"
-                  />
-                  <motion.path
-                    d="M60 160 L110 120 L150 135 L190 90 L240 105 L300 70"
-                    fill="none"
-                    stroke="#3AD0C3"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    opacity="0.9"
-                    initial={{ pathLength: 0 }}
-                    animate={{ pathLength: 1 }}
-                    transition={{ duration: 2, ease: "easeInOut" }}
-                  />
-                  <path
-                    d="M60 175 L110 140 L150 150 L190 110 L240 120 L300 95"
-                    fill="none"
-                    stroke="#3AD0C3"
-                    strokeWidth="1.2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    opacity="0.45"
-                  />
+                <svg className="hero-svg" viewBox="0 0 360 240" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <rect x="24" y="24" width="312" height="192" rx="32" fill="#050B14" stroke="#3AD0C3" strokeWidth="1.4" />
+                  <path d="M60 90 H300 M60 130 H300 M60 170 H300" stroke="#3AD0C3" strokeWidth="0.8" opacity="0.15" />
+                  <motion.path d="M60 160 L110 120 L150 135 L190 90 L240 105 L300 70" fill="none" stroke="#3AD0C3" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" opacity="0.9" initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 2, ease: "easeInOut" }} />
+                  <path d="M60 175 L110 140 L150 150 L190 110 L240 120 L300 95" fill="none" stroke="#3AD0C3" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" opacity="0.45" />
                   <motion.circle cx="60" cy="160" r="4" fill="#3AD0C3" initial={{ scale: 0 }} animate={{ scale: 1 }} transition={{ delay: 0.3 }} />
                   <motion.circle cx="110" cy="120" r="4" fill="#3AD0C3" initial={{ scale: 0 }} animate={{ scale: 1 }} transition={{ delay: 0.5 }} />
                   <motion.circle cx="150" cy="135" r="4" fill="#3AD0C3" initial={{ scale: 0 }} animate={{ scale: 1 }} transition={{ delay: 0.7 }} />
                   <motion.circle cx="190" cy="90" r="4" fill="#3AD0C3" initial={{ scale: 0 }} animate={{ scale: 1 }} transition={{ delay: 0.9 }} />
                   <motion.circle cx="240" cy="105" r="4" fill="#3AD0C3" initial={{ scale: 0 }} animate={{ scale: 1 }} transition={{ delay: 1.1 }} />
                   <motion.circle cx="300" cy="70" r="4" fill="#3AD0C3" initial={{ scale: 0 }} animate={{ scale: 1 }} transition={{ delay: 1.3 }} />
-                  <text
-                    x="40"
-                    y="60"
-                    fill="#E5F7F5"
-                    fontSize="10"
-                    fontFamily="Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"
-                    opacity="0.8"
-                  >
-                    Onchain signals, clarified.
-                  </text>
+                  <text x="40" y="60" fill="#E5F7F5" fontSize="10" fontFamily="Inter, system-ui, sans-serif" opacity="0.8">Onchain signals, clarified.</text>
                 </svg>
               </div>
             </motion.div>
@@ -397,390 +155,181 @@ export default function Home() {
       </section>
 
       {/* ABOUT SECTION */}
-      <section id="about" className="section-spacing bg-background">
+      <section id="about" className="py-16 md:py-24 bg-background">
         <div className="container-constrained">
-          <div className="max-w-3xl mx-auto text-center mb-16">
-            <h2 className="mb-4">About Northwest Onchain</h2>
-            <p className="text-primary text-lg font-medium">A bridge between Wall Street, DeFi, and the Pacific Northwest</p>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-12 md:gap-24 items-center">
-            <motion.div 
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={fadeInUp}
-              className="relative order-2 md:order-1"
-            >
+          <div className="grid md:grid-cols-2 gap-12 md:gap-20 items-center">
+            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp} className="relative order-2 md:order-1">
                <div className="absolute -inset-4 bg-muted/30 rounded-2xl -rotate-2 -z-10"></div>
-               <img 
-                  src={profilePic} 
-                  alt="Photo of Jordan Tonani, founder of Northwest Onchain" 
-                  className="w-full h-auto rounded-xl shadow-lg object-cover aspect-[4/5]"
-                />
+               <img src={profilePic} alt="Photo of Jordan Tonani, founder of Northwest Onchain" className="w-full h-auto rounded-xl shadow-lg object-cover aspect-[4/5]" />
             </motion.div>
 
-            <motion.div 
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={staggerContainer}
-              className="order-1 md:order-2"
-            >
-              <div className="space-y-5 text-muted-foreground text-lg leading-relaxed mb-10">
-                <p>
-                  I'm Jordan Tonani, the founder of Northwest Onchain.
-                </p>
-                <p>
-                  I started my career as a financial advisor at Morgan Stanley, then moved full-time into crypto and DeFi business development. I've worked with onchain lending platforms, structured products, and trading firms, and I'm deeply plugged into EVM-native DeFi, market makers, and the broader crypto ecosystem.
-                </p>
-                <p>
-                  Based in Seattle, I help DeFi teams, RIAs, family offices, and fintechs in the Pacific Northwest and beyond build real strategies around onchain finance—without the hype or the degen risk.
-                </p>
-              </div>
+            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={staggerContainer} className="order-1 md:order-2">
+              <motion.p variants={fadeInUp} className="text-primary text-sm font-semibold uppercase tracking-wider mb-3">About</motion.p>
+              <motion.h2 variants={fadeInUp} className="mb-6">Wall Street roots,<br/>DeFi fluency.</motion.h2>
+              <motion.p variants={fadeInUp} className="text-muted-foreground text-lg leading-relaxed mb-8">
+                I'm Jordan Tonani. I started at Morgan Stanley, then went full-time into crypto BD — working with onchain lending platforms, structured products, and trading firms. Based in Seattle, I help serious teams build real strategies around onchain finance.
+              </motion.p>
 
-              <div className="card-base bg-white">
-                <h3 className="text-lg font-semibold mb-5 text-foreground">What this means for you</h3>
-                <ul className="space-y-5">
-                  <li className="flex items-start gap-4">
-                    <div className="mt-1 text-primary">
-                      <MessageSquare size={20} />
-                    </div>
-                    <div>
-                      <span className="font-semibold text-foreground">I speak both languages.</span>
-                      <span className="text-muted-foreground"> I can translate between crypto-native teams and regulated, risk-aware institutions.</span>
-                    </div>
-                  </li>
-                  <li className="flex items-start gap-4">
-                    <div className="mt-1 text-primary">
-                      <Target size={20} />
-                    </div>
-                    <div>
-                      <span className="font-semibold text-foreground">I focus on outcomes, not noise.</span>
-                      <span className="text-muted-foreground"> Fewer buzzwords, more clear strategies, integrations, and conversations that move the needle.</span>
-                    </div>
-                  </li>
-                  <li className="flex items-start gap-4">
-                    <div className="mt-1 text-primary">
-                      <Shield size={20} />
-                    </div>
-                    <div>
-                      <span className="font-semibold text-foreground">I'm selective.</span>
-                      <span className="text-muted-foreground"> I work with teams and firms that want to build durable, compliant, long-term onchain businesses.</span>
-                    </div>
-                  </li>
-                </ul>
-              </div>
+              <motion.div variants={fadeInUp} className="space-y-4">
+                {[
+                  { icon: MessageSquare, bold: "Bilingual.", rest: "I translate between crypto-native teams and regulated institutions." },
+                  { icon: Target, bold: "Outcome-driven.", rest: "Clear strategies that move the needle — not buzzwords." },
+                  { icon: Shield, bold: "Selective.", rest: "I work with teams building durable, compliant onchain businesses." },
+                ].map((item, i) => (
+                  <div key={i} className="flex items-start gap-3">
+                    <div className="mt-1 text-primary"><item.icon size={18} /></div>
+                    <p className="text-sm"><span className="font-semibold text-foreground">{item.bold}</span> <span className="text-muted-foreground">{item.rest}</span></p>
+                  </div>
+                ))}
+              </motion.div>
             </motion.div>
           </div>
         </div>
       </section>
 
       {/* SERVICES SECTION */}
-      <section id="services" className="section-spacing bg-white border-y border-border/40">
+      <section id="services" className="py-16 md:py-24 bg-white border-y border-border/40">
         <div className="container-constrained">
-          <div className="max-w-2xl mb-16">
-            <h2 className="mb-4">Services</h2>
-            <p className="text-muted-foreground text-lg">Productized ways to work together</p>
+          <div className="max-w-2xl mb-12">
+            <p className="text-primary text-sm font-semibold uppercase tracking-wider mb-3">Services</p>
+            <h2 className="mb-3">Three ways to work together</h2>
           </div>
 
           <div className="grid md:grid-cols-3 gap-6">
-            {/* Service Card 1: Onchain BD Sprint */}
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-              className="group"
-            >
-              <Card className="h-full card-base border-border hover:border-primary/30 transition-all flex flex-col p-0 overflow-hidden bg-[#F8F5F0]/30">
-                <div className="h-1 w-full bg-primary/0 group-hover:bg-primary transition-all duration-300"></div>
-                <CardHeader className="pb-4 pt-8 px-8">
-                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center text-primary mb-6">
-                    <Rocket size={24} />
-                  </div>
-                  <CardTitle className="text-xl mb-2">Onchain BD Sprint</CardTitle>
-                  <CardDescription className="text-sm font-medium text-primary">
-                    For DeFi, crypto, and onchain infra teams
-                  </CardDescription>
-                </CardHeader>
-                <CardContent className="px-8 pb-8 flex-grow flex flex-col">
-                  <p className="text-muted-foreground text-sm mb-6 leading-relaxed">
-                    A 6-week, focused business development sprint to turn scattered conversations into a real pipeline of partners and integrations. We map your ideal partners (wallets, custodians, exchanges, prop shops, RIAs, FOs), refine your institutional narrative, and run targeted outreach so you end up with actual meetings, not just a Discord funnel.
-                  </p>
-                  
-                  <p className="text-sm font-semibold text-foreground mb-3">You'll leave with:</p>
-                  <ul className="space-y-2 text-muted-foreground text-sm flex-grow mb-6">
-                    {[
-                      "A clear partner and account map for your vertical",
-                      "A prioritized list of 30–50 targets and intro paths",
-                      "Refined institutional messaging and outreach templates",
-                      "A live pipeline of qualified BD conversations"
-                    ].map((point, idx) => (
-                      <li key={idx} className="flex items-start gap-2">
-                        <Check className="w-4 h-4 text-primary shrink-0 mt-0.5" />
-                        <span>{point}</span>
-                      </li>
-                    ))}
-                  </ul>
-                  <p className="text-xs text-muted-foreground italic border-t border-border pt-4">
-                    Pricing: fixed-fee sprint with optional upside-aligned milestones.
-                  </p>
-                </CardContent>
-              </Card>
-            </motion.div>
-
-            {/* Service Card 2: Crypto Strategy & Education */}
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.2 }}
-              className="group"
-            >
-              <Card className="h-full card-base border-border hover:border-primary/30 transition-all flex flex-col p-0 overflow-hidden bg-[#F8F5F0]/30">
-                <div className="h-1 w-full bg-primary/0 group-hover:bg-primary transition-all duration-300"></div>
-                <CardHeader className="pb-4 pt-8 px-8">
-                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center text-primary mb-6">
-                    <GraduationCap size={24} />
-                  </div>
-                  <CardTitle className="text-xl mb-2">Crypto Strategy & Education Program</CardTitle>
-                  <CardDescription className="text-sm font-medium text-primary">
-                    For RIAs, wealth firms, and family offices
-                  </CardDescription>
-                </CardHeader>
-                <CardContent className="px-8 pb-8 flex-grow flex flex-col">
-                  <p className="text-muted-foreground text-sm mb-6 leading-relaxed">
-                    A firm-level program to help RIAs and family offices decide how they will (and won't) engage with crypto and onchain finance—and to give advisors the language to talk about it with clients. We combine a strategy intensive, advisor education sessions, and client-ready materials so your partners have a clear, defensible stance.
-                  </p>
-                  
-                  <p className="text-sm font-semibold text-foreground mb-3">You'll leave with:</p>
-                  <ul className="space-y-2 text-muted-foreground text-sm flex-grow mb-6">
-                    {[
-                      "A written 12–24 month digital asset / onchain strategy tailored to your firm",
-                      "Simple talking points and FAQs advisors can use with clients",
-                      "Training sessions that raise the floor of crypto literacy across the team"
-                    ].map((point, idx) => (
-                      <li key={idx} className="flex items-start gap-2">
-                        <Check className="w-4 h-4 text-primary shrink-0 mt-0.5" />
-                        <span>{point}</span>
-                      </li>
-                    ))}
-                  </ul>
-                  <p className="text-xs text-muted-foreground italic border-t border-border pt-4">
-                    Education only. Nothing here is individualized investment, legal, or tax advice.
-                  </p>
-                </CardContent>
-              </Card>
-            </motion.div>
-
-            {/* Service Card 3: Web3 Opportunity Lab */}
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.3 }}
-              className="group"
-            >
-              <Card className="h-full card-base border-border hover:border-primary/30 transition-all flex flex-col p-0 overflow-hidden bg-[#F8F5F0]/30">
-                <div className="h-1 w-full bg-primary/0 group-hover:bg-primary transition-all duration-300"></div>
-                <CardHeader className="pb-4 pt-8 px-8">
-                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center text-primary mb-6">
-                    <Lightbulb size={24} />
-                  </div>
-                  <CardTitle className="text-xl mb-2">Web3 Opportunity Lab</CardTitle>
-                  <CardDescription className="text-sm font-medium text-primary">
-                    For fintechs and forward-looking enterprises
-                  </CardDescription>
-                </CardHeader>
-                <CardContent className="px-8 pb-8 flex-grow flex flex-col">
-                  <p className="text-muted-foreground text-sm mb-6 leading-relaxed">
-                    A 4-week lab-style engagement to identify where (if anywhere) web3 and onchain finance actually make sense for your business. We explore concrete use cases—tokenization, stablecoin settlement, loyalty, data—and pressure-test them for business value, feasibility, and regulatory sanity.
-                  </p>
-                  
-                  <p className="text-sm font-semibold text-foreground mb-3">You'll leave with:</p>
-                  <ul className="space-y-2 text-muted-foreground text-sm flex-grow mb-6">
-                    {[
-                      "1–2 prioritized web3 / onchain use cases mapped to your business model",
-                      "A short list of vendors, protocols, and partners worth talking to",
-                      "A 6–12 month implementation roadmap—or a clear \"not now\" if it doesn't pencil out"
-                    ].map((point, idx) => (
-                      <li key={idx} className="flex items-start gap-2">
-                        <Check className="w-4 h-4 text-primary shrink-0 mt-0.5" />
-                        <span>{point}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </CardContent>
-              </Card>
-            </motion.div>
-          </div>
-          
-          <div className="mt-12 text-center">
-            <Button onClick={() => scrollToSection('contact')} className="btn-primary">
-              Book a 30-minute discovery call
-            </Button>
-          </div>
-        </div>
-      </section>
-
-      {/* WHO I WORK WITH SECTION */}
-      <section id="who-i-work-with" className="section-spacing bg-background">
-        <div className="container-constrained">
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="mb-6">Who this is for</h2>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-              className="card-base text-center hover:shadow-md transition-shadow bg-white"
-            >
-              <div className="w-16 h-16 mx-auto bg-primary/10 rounded-full flex items-center justify-center mb-6 text-primary">
-                <Users size={28} />
-              </div>
-              <h3 className="text-lg font-bold mb-3">DeFi & crypto teams</h3>
-              <p className="text-muted-foreground text-sm">
-                Onchain lending, structured products, DeFi protocols, infrastructure providers, and data platforms that need institutional-grade BD.
-              </p>
-            </motion.div>
-
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.2 }}
-              className="card-base text-center hover:shadow-md transition-shadow bg-white"
-            >
-              <div className="w-16 h-16 mx-auto bg-primary/10 rounded-full flex items-center justify-center mb-6 text-primary">
-                <Building2 size={28} />
-              </div>
-              <h3 className="text-lg font-bold mb-3">RIAs & family offices</h3>
-              <p className="text-muted-foreground text-sm">
-                Wealth managers who want a sane, defensible way to talk about crypto and onchain finance with clients.
-              </p>
-            </motion.div>
-
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.3 }}
-              className="card-base text-center hover:shadow-md transition-shadow bg-white"
-            >
-              <div className="w-16 h-16 mx-auto bg-primary/10 rounded-full flex items-center justify-center mb-6 text-primary">
-                <Briefcase size={28} />
-              </div>
-              <h3 className="text-lg font-bold mb-3">Fintechs & enterprises</h3>
-              <p className="text-muted-foreground text-sm">
-                Teams exploring tokenization, stablecoins, or web3 features and looking for a clear decision on what's worth building.
-              </p>
-            </motion.div>
+            {[
+              {
+                icon: Rocket,
+                title: "Onchain BD Sprint",
+                tag: "For DeFi & crypto teams",
+                desc: "A 6-week sprint to build a real partner pipeline — wallets, custodians, exchanges, RIAs — with refined messaging and targeted outreach.",
+                points: ["Partner & account map for your vertical", "30–50 prioritized targets with intro paths", "Institutional messaging templates", "Live pipeline of BD conversations"],
+                footer: "Fixed-fee with optional upside-aligned milestones."
+              },
+              {
+                icon: GraduationCap,
+                title: "Crypto Strategy & Education",
+                tag: "For RIAs & family offices",
+                desc: "Help your firm decide how to engage with crypto and give advisors the language to discuss it with clients.",
+                points: ["12–24 month digital asset strategy", "Client-ready talking points & FAQs", "Team training sessions"],
+                footer: "Education only. Not investment, legal, or tax advice."
+              },
+              {
+                icon: Lightbulb,
+                title: "Web3 Opportunity Lab",
+                tag: "For fintechs & enterprises",
+                desc: "A 4-week engagement to identify where web3 actually makes sense for your business — and where it doesn't.",
+                points: ["1–2 prioritized use cases for your model", "Vendor & protocol shortlist", "Implementation roadmap (or a clear 'not now')"],
+                footer: null
+              }
+            ].map((service, i) => (
+              <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }} className="group">
+                <Card className="h-full card-base border-border hover:border-primary/30 transition-all flex flex-col p-0 overflow-hidden bg-[#F8F5F0]/30">
+                  <div className="h-1 w-full bg-primary/0 group-hover:bg-primary transition-all duration-300"></div>
+                  <CardHeader className="pb-3 pt-7 px-7">
+                    <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center text-primary mb-4">
+                      <service.icon size={20} />
+                    </div>
+                    <CardTitle className="text-lg mb-1">{service.title}</CardTitle>
+                    <CardDescription className="text-xs font-medium text-primary">{service.tag}</CardDescription>
+                  </CardHeader>
+                  <CardContent className="px-7 pb-7 flex-grow flex flex-col">
+                    <p className="text-muted-foreground text-sm mb-5 leading-relaxed">{service.desc}</p>
+                    <ul className="space-y-2 text-muted-foreground text-sm flex-grow mb-4">
+                      {service.points.map((point, idx) => (
+                        <li key={idx} className="flex items-start gap-2">
+                          <Check className="w-4 h-4 text-primary shrink-0 mt-0.5" /><span>{point}</span>
+                        </li>
+                      ))}
+                    </ul>
+                    {service.footer && (
+                      <p className="text-xs text-muted-foreground italic border-t border-border pt-3">{service.footer}</p>
+                    )}
+                  </CardContent>
+                </Card>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>
 
       {/* PROCESS SECTION */}
-      <section id="process" className="section-spacing bg-[#050B14] text-white relative overflow-hidden">
+      <section id="process" className="py-16 md:py-24 bg-[#050B14] text-white relative overflow-hidden">
         <div className="container-constrained relative z-10">
-          <div className="text-center mb-16">
-            <h2 className="text-white mb-6">How we work together</h2>
+          <div className="text-center mb-14">
+            <p className="text-primary text-sm font-semibold uppercase tracking-wider mb-3">Process</p>
+            <h2 className="text-white">How we work together</h2>
           </div>
-          
           <div className="grid md:grid-cols-4 gap-8 relative">
-            {/* Connecting Line (Desktop) */}
-            <div className="hidden md:block absolute top-12 left-0 right-0 h-0.5 bg-white/10 -z-10" />
-            
+            <div className="hidden md:block absolute top-10 left-[12%] right-[12%] h-0.5 bg-white/10 -z-10" />
             {[
-              { step: "01", title: "Discovery", desc: "A 30–45 minute call to understand your goals, constraints, and what 'success' looks like." },
-              { step: "02", title: "Diagnosis", desc: "We map your current situation across strategy, partners, and internal capabilities." },
-              { step: "03", title: "Plan", desc: "You get a clear 4–12 week roadmap: priorities, owners, and how we'll measure progress." },
-              { step: "04", title: "Execute", desc: "We run the sprint: BD outreach, education, or opportunity mapping—with regular check-ins and concrete deliverables." },
+              { step: "01", title: "Discovery", desc: "30-minute call to understand your goals and constraints." },
+              { step: "02", title: "Diagnosis", desc: "Map your strategy, partners, and capabilities." },
+              { step: "03", title: "Plan", desc: "Clear 4–12 week roadmap with priorities and owners." },
+              { step: "04", title: "Execute", desc: "BD outreach, education, or opportunity mapping with regular check-ins." },
             ].map((item, i) => (
-              <motion.div 
-                key={i}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-                className="relative text-center md:text-left"
-              >
-                <div className="w-24 h-24 bg-[#050B14] border-2 border-primary rounded-full flex items-center justify-center text-2xl font-bold text-primary mb-6 mx-auto md:mx-0 shadow-[0_0_20px_rgba(58,208,195,0.2)] z-10">
+              <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }} className="relative text-center md:text-left">
+                <div className="w-20 h-20 bg-[#050B14] border-2 border-primary rounded-full flex items-center justify-center text-xl font-bold text-primary mb-5 mx-auto md:mx-0 shadow-[0_0_20px_rgba(58,208,195,0.15)] z-10">
                   {item.step}
                 </div>
-                <h3 className="text-xl font-bold mb-3 text-white">{item.title}</h3>
-                <p className="text-white/60 text-sm leading-relaxed">{item.desc}</p>
+                <h3 className="text-lg font-bold mb-2 text-white">{item.title}</h3>
+                <p className="text-white/50 text-sm">{item.desc}</p>
               </motion.div>
             ))}
           </div>
-
-          <div className="mt-16 text-center">
-            <p className="text-white/60 text-sm max-w-2xl mx-auto">
-              Most engagements are designed as low base fees plus upside aligned to adoption and real business outcomes, not hype.
-            </p>
+          <div className="mt-12 text-center">
+            <p className="text-white/40 text-sm">Low base fees plus upside aligned to real business outcomes.</p>
           </div>
         </div>
       </section>
 
       {/* CONTACT SECTION */}
-      <section id="contact" className="section-spacing bg-background">
+      <section id="contact" className="py-16 md:py-24 bg-background">
         <div className="container-constrained">
           <div className="grid md:grid-cols-2 gap-12 items-start">
             <div>
-              <h2 className="mb-6 leading-tight">Let's see if there's a fit</h2>
-              <div className="space-y-5 text-muted-foreground text-lg leading-relaxed mb-8">
-                <p>
-                  If you're a DeFi team, RIA, family office, or business in the Pacific Northwest (or beyond) trying to get serious about onchain finance, I'd love to hear what you're working on.
-                </p>
-                <p>
-                  Share a bit about your team and goals, and I'll respond with next steps or a link to schedule a 30-minute discovery call.
-                </p>
-              </div>
-              
-              <div className="flex items-center gap-4 mt-8 p-4 bg-white rounded-lg border border-border">
-                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary">
-                  <Mail size={20} />
+              <p className="text-primary text-sm font-semibold uppercase tracking-wider mb-3">Contact</p>
+              <h2 className="mb-5 leading-tight">Let's see if there's a fit</h2>
+              <p className="text-muted-foreground text-lg leading-relaxed mb-8">
+                Tell me about your team and goals. I'll respond within 1–2 business days with next steps.
+              </p>
+              <div className="flex items-center gap-4 p-4 bg-white rounded-lg border border-border">
+                <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+                  <Mail size={18} />
                 </div>
                 <div>
-                  <p className="text-sm text-muted-foreground">Prefer email?</p>
-                  <a href="mailto:hello@northwestonchain.com" className="text-foreground hover:text-primary font-medium transition-colors">
-                    hello@northwestonchain.com
-                  </a>
+                  <p className="text-xs text-muted-foreground">Prefer email?</p>
+                  <a href="mailto:hello@northwestonchain.com" className="text-foreground hover:text-primary font-medium transition-colors text-sm">hello@northwestonchain.com</a>
                 </div>
               </div>
             </div>
 
             <Card className="card-base bg-white border-border shadow-lg">
               <CardContent className="p-0">
-                <form onSubmit={handleContactSubmit} className="space-y-6">
-                  <div className="space-y-2">
-                    <Label htmlFor="name">Name</Label>
-                    <Input id="name" name="name" placeholder="Jane Doe" required className="bg-background border-border h-12 focus:ring-primary" />
-                  </div>
-                  
-                  <div className="space-y-2">
-                    <Label htmlFor="email">Email</Label>
-                    <Input id="email" name="email" type="email" placeholder="jane@company.com" required className="bg-background border-border h-12 focus:ring-primary" />
-                  </div>
-                  
+                <form onSubmit={handleContactSubmit} className="space-y-5">
                   <div className="grid grid-cols-2 gap-4">
-                    <div className="space-y-2">
-                      <Label htmlFor="org">Organization</Label>
-                      <Input id="org" name="organization" placeholder="Company Ltd." className="bg-background border-border h-12 focus:ring-primary" />
+                    <div className="space-y-1.5">
+                      <Label htmlFor="name" className="text-sm">Name</Label>
+                      <Input id="name" name="name" placeholder="Jane Doe" required className="bg-background border-border h-11 focus:ring-primary" />
                     </div>
-                    <div className="space-y-2">
-                      <Label htmlFor="role">Role</Label>
-                      <Input id="role" name="role" placeholder="Founder, CIO..." className="bg-background border-border h-12 focus:ring-primary" />
+                    <div className="space-y-1.5">
+                      <Label htmlFor="email" className="text-sm">Email</Label>
+                      <Input id="email" name="email" type="email" placeholder="jane@company.com" required className="bg-background border-border h-11 focus:ring-primary" />
                     </div>
                   </div>
-
-                  <div className="space-y-2">
-                    <Label htmlFor="type">Which best describes you?</Label>
+                  <div className="grid grid-cols-2 gap-4">
+                    <div className="space-y-1.5">
+                      <Label htmlFor="org" className="text-sm">Organization</Label>
+                      <Input id="org" name="organization" placeholder="Company" className="bg-background border-border h-11 focus:ring-primary" />
+                    </div>
+                    <div className="space-y-1.5">
+                      <Label htmlFor="role" className="text-sm">Role</Label>
+                      <Input id="role" name="role" placeholder="Founder, CIO..." className="bg-background border-border h-11 focus:ring-primary" />
+                    </div>
+                  </div>
+                  <div className="space-y-1.5">
+                    <Label htmlFor="type" className="text-sm">Which best describes you?</Label>
                     <Select name="type" required>
-                      <SelectTrigger className="bg-background border-border h-12 focus:ring-primary">
+                      <SelectTrigger className="bg-background border-border h-11 focus:ring-primary">
                         <SelectValue placeholder="Select option" />
                       </SelectTrigger>
                       <SelectContent>
@@ -792,15 +341,11 @@ export default function Home() {
                       </SelectContent>
                     </Select>
                   </div>
-
-                  <div className="space-y-2">
-                    <Label htmlFor="message">What do you want help with?</Label>
-                    <Textarea id="message" name="message" placeholder="Tell me about your team and goals..." required className="min-h-[120px] bg-background border-border resize-none focus:ring-primary" />
+                  <div className="space-y-1.5">
+                    <Label htmlFor="message" className="text-sm">How can I help?</Label>
+                    <Textarea id="message" name="message" placeholder="Tell me about your team and goals..." required className="min-h-[100px] bg-background border-border resize-none focus:ring-primary" />
                   </div>
-
-                  <Button type="submit" className="w-full btn-primary h-12 text-base">
-                    Book a 30-minute discovery call
-                  </Button>
+                  <Button type="submit" className="w-full btn-primary h-11 text-sm">Book a discovery call</Button>
                 </form>
               </CardContent>
             </Card>
@@ -809,25 +354,19 @@ export default function Home() {
       </section>
 
       {/* FOOTER */}
-      <footer className="py-12 bg-[#050B14] text-white border-t border-white/10">
+      <footer className="py-10 bg-[#050B14] text-white border-t border-white/10">
         <div className="container-constrained">
-          <div className="flex flex-col items-center gap-6 mb-8">
-             <div className="flex items-center">
-                <img src="/nw-logo.png" alt="Northwest Onchain" className="h-16 w-auto brightness-0 invert" />
-              </div>
-              <p className="text-white/60 max-w-md mx-auto text-center">
-                Based in Seattle, working with clients globally.
-              </p>
+          <div className="flex flex-col items-center gap-4 mb-6">
+            <img src="/nw-logo.png" alt="Northwest Onchain" className="h-14 w-auto brightness-0 invert" />
+            <p className="text-white/50 text-sm">Based in Seattle, working with clients globally.</p>
           </div>
-          <div className="text-center mb-8">
-            <Button onClick={() => scrollToSection('contact')} className="btn-primary">
-               Book a 30-minute discovery call
-            </Button>
+          <div className="text-center mb-6">
+            <Button onClick={() => scrollToSection('contact')} className="btn-primary text-sm">Book a discovery call</Button>
           </div>
-          <div className="border-t border-white/10 pt-8 text-center">
-            <p className="text-sm text-white/40 mb-4">© {new Date().getFullYear()} Northwest Onchain. All rights reserved.</p>
-            <p className="text-xs text-white/30 max-w-2xl mx-auto leading-relaxed">
-              Northwest Onchain provides education and consulting services only. Nothing on this site or in our engagements is individualized investment, legal, or tax advice.
+          <div className="border-t border-white/10 pt-6 text-center">
+            <p className="text-xs text-white/35 mb-2">© {new Date().getFullYear()} Northwest Onchain. All rights reserved.</p>
+            <p className="text-xs text-white/25 max-w-xl mx-auto">
+              Northwest Onchain provides education and consulting services only. Nothing on this site is individualized investment, legal, or tax advice.
             </p>
           </div>
         </div>
