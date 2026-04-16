@@ -3,13 +3,28 @@ import { queryClient } from "./lib/queryClient";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
-import Home from "@/pages/home";
+import Home, {
+  AboutJordanPage,
+  ContactPage,
+  InsightsPage,
+  InstitutionalStrategyPage,
+  SeattlePage,
+  TreasuryYieldPage,
+  WealthEnablementPage,
+} from "@/pages/home";
 import NotFound from "@/pages/not-found";
 
 function Router() {
   return (
     <Switch>
       <Route path="/" component={Home} />
+      <Route path="/institutional-onchain-strategy-bd" component={InstitutionalStrategyPage} />
+      <Route path="/onchain-treasury-yield-strategy" component={TreasuryYieldPage} />
+      <Route path="/advisor-wealth-platform-enablement" component={WealthEnablementPage} />
+      <Route path="/about-jordan" component={AboutJordanPage} />
+      <Route path="/seattle-pacific-northwest-digital-asset-strategy" component={SeattlePage} />
+      <Route path="/insights" component={InsightsPage} />
+      <Route path="/contact" component={ContactPage} />
       <Route component={NotFound} />
     </Switch>
   );
